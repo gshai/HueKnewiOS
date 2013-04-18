@@ -20,6 +20,8 @@
 {
     [super viewDidLoad];
 
+    _mag = nil;
+    
 	// Do any additional setup after loading the view, typically from a nib.
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
     tapRecognizer.numberOfTapsRequired = 1;
@@ -67,7 +69,31 @@
 
 }
 
-#pragma mark - Gestures
+
+#pragma mark - Magnifier
+- (void)createMagnifierWithPoint:(CGPoint)point {
+    if (nil != _mag) {
+        return;
+    }
+    
+    NSLog(@"create mag");
+    _mag = [[MagnifierView alloc] init];
+    _mag.viewToMagnify = _imageView;
+    _mag.delegate = self;
+    _mag.touchPoint = point;
+}
+
+
+#pragma mark - Magnifier Protocol
+
+- (void)updateWithColor:(UIColor *)color {
+    NSLog(@"update with color %@", color);
+    [_colorView setBackgroundColor:color];
+}
+
+
+#pragma mark - Gestures Protocol
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
@@ -76,9 +102,36 @@
 - (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer
 {
     NSLog(@"tapDetected");
+    // create or destroy magnifier
+    
 }
+
 - (void)panDetected:(UIPanGestureRecognizer *)pan {
     CGPoint point = [pan locationInView:_imageView];
-    NSLog(@"dragging x:%f y: %f", point.x, point.y);
+    
+    switch (pan.state) {
+        case UIGestureRecognizerStateBegan: {
+            NSLog(@"started the drag");
+            [self createMagnifierWithPoint:point];
+            [_imageView addSubview:_mag];
+            [_imageView bringSubviewToFront:_mag];
+        }
+            break;
+        case UIGestureRecognizerStateChanged: {            
+            NSLog(@"dragging x:%f y: %f", point.x, point.y);
+            _mag.touchPoint = point;
+            [_mag setNeedsDisplay];
+        }
+            break;
+        case UIGestureRecognizerStateEnded: {            
+            NSLog(@"drag ended");
+            [_mag removeFromSuperview];
+            _mag = nil;
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 @end

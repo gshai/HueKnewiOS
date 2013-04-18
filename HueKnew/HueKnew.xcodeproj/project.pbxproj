@@ -33,6 +33,7 @@
 		D8FBC2B117209ED800562FCE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2B017209ED800562FCE /* SystemConfiguration.framework */; };
 		D8FBC2B317209EDF00562FCE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2B217209EDF00562FCE /* MobileCoreServices.framework */; };
 		D8FBC2BA1720A86500562FCE /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FBC2B91720A86500562FCE /* sample.png */; };
+		D8FBC2BD1720B1DD00562FCE /* MagnifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		D8FBC2B017209ED800562FCE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D8FBC2B217209EDF00562FCE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D8FBC2B91720A86500562FCE /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		D8FBC2BB1720B1DD00562FCE /* MagnifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagnifierView.h; path = Classes/MagnifierView.h; sourceTree = "<group>"; };
+		D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MagnifierView.m; path = Classes/MagnifierView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,7 @@
 		D8FBC25F17209D1700562FCE /* HueKnew */ = {
 			isa = PBXGroup;
 			children = (
+				D8FBC2BE1720B1E900562FCE /* Classes */,
 				D8FBC26817209D1700562FCE /* AppDelegate.h */,
 				D8FBC26917209D1700562FCE /* AppDelegate.m */,
 				D8FBC27117209D1700562FCE /* ViewController.h */,
@@ -199,6 +203,15 @@
 				D8FBC2B91720A86500562FCE /* sample.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D8FBC2BE1720B1E900562FCE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D8FBC2BB1720B1DD00562FCE /* MagnifierView.h */,
+				D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +294,7 @@
 				D8FBC29D17209D7E00562FCE /* AFURLConnectionOperation.m in Sources */,
 				D8FBC29E17209D7E00562FCE /* AFXMLRequestOperation.m in Sources */,
 				D8FBC29F17209D7E00562FCE /* UIImageView+AFNetworking.m in Sources */,
+				D8FBC2BD1720B1DD00562FCE /* MagnifierView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
