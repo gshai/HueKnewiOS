@@ -32,6 +32,7 @@
 		D8FBC2AF17209ED200562FCE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2AE17209ED200562FCE /* Security.framework */; };
 		D8FBC2B117209ED800562FCE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2B017209ED800562FCE /* SystemConfiguration.framework */; };
 		D8FBC2B317209EDF00562FCE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2B217209EDF00562FCE /* MobileCoreServices.framework */; };
+		D8FBC2BA1720A86500562FCE /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FBC2B91720A86500562FCE /* sample.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		D8FBC2AE17209ED200562FCE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D8FBC2B017209ED800562FCE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D8FBC2B217209EDF00562FCE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D8FBC2B91720A86500562FCE /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +100,7 @@
 		D8FBC24A17209D1600562FCE = {
 			isa = PBXGroup;
 			children = (
-				D8FBC2B217209EDF00562FCE /* MobileCoreServices.framework */,
-				D8FBC2B017209ED800562FCE /* SystemConfiguration.framework */,
-				D8FBC2AE17209ED200562FCE /* Security.framework */,
-				D8FBC2AC17209EC900562FCE /* CoreLocation.framework */,
+				D8FBC2B81720A86500562FCE /* Resources */,
 				D8FBC27F17209D7D00562FCE /* Libs */,
 				D8FBC25F17209D1700562FCE /* HueKnew */,
 				D8FBC25817209D1700562FCE /* Frameworks */,
@@ -120,6 +119,10 @@
 		D8FBC25817209D1700562FCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8FBC2B217209EDF00562FCE /* MobileCoreServices.framework */,
+				D8FBC2B017209ED800562FCE /* SystemConfiguration.framework */,
+				D8FBC2AE17209ED200562FCE /* Security.framework */,
+				D8FBC2AC17209EC900562FCE /* CoreLocation.framework */,
 				D8FBC25917209D1700562FCE /* UIKit.framework */,
 				D8FBC25B17209D1700562FCE /* Foundation.framework */,
 				D8FBC25D17209D1700562FCE /* CoreGraphics.framework */,
@@ -190,6 +193,14 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		D8FBC2B81720A86500562FCE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D8FBC2B91720A86500562FCE /* sample.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +258,7 @@
 				D8FBC27017209D1700562FCE /* Default-568h@2x.png in Resources */,
 				D8FBC27617209D1700562FCE /* ViewController_iPhone.xib in Resources */,
 				D8FBC27917209D1700562FCE /* ViewController_iPad.xib in Resources */,
+				D8FBC2BA1720A86500562FCE /* sample.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

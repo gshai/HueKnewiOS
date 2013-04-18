@@ -15,16 +15,34 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view, typically from a nib.
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    tapRecognizer.delegate = self;
+    [_imageView addGestureRecognizer:tapRecognizer];
+    
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
+    pan.delegate = self;
+    [_imageView addGestureRecognizer:pan];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)sendColor:(id)sender {
+    
+    // get color from colorView
+    UIColor *color = _colorView.backgroundColor;
+    [self sendColorToHK:color];
 }
 
 - (void)sendColorToHK:(UIColor *)color {
@@ -49,4 +67,18 @@
 
 }
 
+#pragma mark - Gestures
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+- (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer
+{
+    NSLog(@"tapDetected");
+}
+- (void)panDetected:(UIPanGestureRecognizer *)pan {
+    CGPoint point = [pan locationInView:_imageView];
+    NSLog(@"dragging x:%f y: %f", point.x, point.y);
+}
 @end

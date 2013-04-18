@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIGestureRecognizerDelegate>
+@property (strong, nonatomic) IBOutlet UIButton *sendColorBtn;
+@property (strong, nonatomic) IBOutlet UIView *colorView;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
+
+
+- (IBAction)sendColor:(id)sender;
 - (void)sendColorToHK:(UIColor *)color;
+
 @end
