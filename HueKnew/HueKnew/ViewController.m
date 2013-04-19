@@ -40,6 +40,16 @@
 }
 
 
+#pragma mark - Actions
+
+- (IBAction)photoLibraryAction:(id)sender {
+    [self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+
+- (IBAction)cameraAction:(id)sender {
+    [self showImagePicker:UIImagePickerControllerSourceTypeCamera];
+}
+
 - (IBAction)sendColor:(id)sender {
     
     // get color from colorView
@@ -47,16 +57,30 @@
     [self sendColorToHK:color];
 }
 
+#pragma mark - Server
 - (void)sendColorToHK:(UIColor *)color {
     
     // Translate RGB to integer
     const float* colors = CGColorGetComponents(color.CGColor);
-    int rgb = (int)(colors[0]*255);
-    rgb = (rgb << 8) + ((int)colors[1])*255;
-    rgb = (rgb << 8) + ((int)colors[2])*255;
-
+    
+    float r = 255*colors[0];
+    float g = 255*colors[1];
+    float b = 255*colors[2];    
+    
+    int rgb = 0;
+    rgb = rgb + (int)(r);
+    rgb = (rgb << 8) + (int)(g);
+    rgb = (rgb << 8) + (int)(b);
+    
+    int javaRGB = -16777216;
+    javaRGB = javaRGB + rgb;
+    
+    NSLog(@"\nRGB :%@ \nint:  %d\n javaRGB: %d", color, rgb, javaRGB );
+    
+#warning don't forget to remove the comment of the SEND
+/*
     // Create url and request
-    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://www.hue-knew.appspot.com/api/request/color;key=something;col=%d", rgb]];
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://www.hue-knew.appspot.com/api/request/color;key=something;col=%d", javaRGB]];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     // Make request
@@ -66,7 +90,23 @@
         NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
     }];
     [operation start];
+*/
+}
 
+
+#pragma mark - Photo Library
+
+- (void)showImagePicker:(UIImagePickerControllerSourceType)sourceType
+{
+    if (_imageView.isAnimating) {
+        [_imageView stopAnimating];
+    }
+	    
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType])
+    {
+        [self.overlayViewController setupImagePicker:sourceType];
+        [self presentModalViewController:self.overlayViewController.imagePickerController animated:YES];
+    }
 }
 
 

@@ -34,6 +34,9 @@
 		D8FBC2B317209EDF00562FCE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2B217209EDF00562FCE /* MobileCoreServices.framework */; };
 		D8FBC2BA1720A86500562FCE /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FBC2B91720A86500562FCE /* sample.png */; };
 		D8FBC2BD1720B1DD00562FCE /* MagnifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */; };
+		D8FBC2D81721F14C00562FCE /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FBC2D61721F14C00562FCE /* OverlayViewController.m */; };
+		D8FBC2D91721F14C00562FCE /* OverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */; };
+		D8FBC2DC1721F43D00562FCE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2DB1721F43D00562FCE /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,10 @@
 		D8FBC2B91720A86500562FCE /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		D8FBC2BB1720B1DD00562FCE /* MagnifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagnifierView.h; path = Classes/MagnifierView.h; sourceTree = "<group>"; };
 		D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MagnifierView.m; path = Classes/MagnifierView.m; sourceTree = "<group>"; };
+		D8FBC2D51721F14C00562FCE /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayViewController.h; path = Classes/OverlayViewController.h; sourceTree = "<group>"; };
+		D8FBC2D61721F14C00562FCE /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayViewController.m; path = Classes/OverlayViewController.m; sourceTree = "<group>"; };
+		D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverlayViewController.xib; path = Classes/OverlayViewController.xib; sourceTree = "<group>"; };
+		D8FBC2DB1721F43D00562FCE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8FBC2DC1721F43D00562FCE /* AudioToolbox.framework in Frameworks */,
 				D8FBC2B317209EDF00562FCE /* MobileCoreServices.framework in Frameworks */,
 				D8FBC2B117209ED800562FCE /* SystemConfiguration.framework in Frameworks */,
 				D8FBC2AF17209ED200562FCE /* Security.framework in Frameworks */,
@@ -103,6 +111,7 @@
 		D8FBC24A17209D1600562FCE = {
 			isa = PBXGroup;
 			children = (
+				D8FBC2DB1721F43D00562FCE /* AudioToolbox.framework */,
 				D8FBC2B81720A86500562FCE /* Resources */,
 				D8FBC27F17209D7D00562FCE /* Libs */,
 				D8FBC25F17209D1700562FCE /* HueKnew */,
@@ -208,6 +217,9 @@
 		D8FBC2BE1720B1E900562FCE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D8FBC2D51721F14C00562FCE /* OverlayViewController.h */,
+				D8FBC2D61721F14C00562FCE /* OverlayViewController.m */,
+				D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */,
 				D8FBC2BB1720B1DD00562FCE /* MagnifierView.h */,
 				D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */,
 			);
@@ -272,6 +284,7 @@
 				D8FBC27617209D1700562FCE /* ViewController_iPhone.xib in Resources */,
 				D8FBC27917209D1700562FCE /* ViewController_iPad.xib in Resources */,
 				D8FBC2BA1720A86500562FCE /* sample.png in Resources */,
+				D8FBC2D91721F14C00562FCE /* OverlayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +308,7 @@
 				D8FBC29E17209D7E00562FCE /* AFXMLRequestOperation.m in Sources */,
 				D8FBC29F17209D7E00562FCE /* UIImageView+AFNetworking.m in Sources */,
 				D8FBC2BD1720B1DD00562FCE /* MagnifierView.m in Sources */,
+				D8FBC2D81721F14C00562FCE /* OverlayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +435,7 @@
 				D8FBC27E17209D1700562FCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

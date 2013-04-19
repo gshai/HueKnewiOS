@@ -35,7 +35,7 @@
     // Magnify the view
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextTranslateCTM(context,1*(self.frame.size.width*0.5),1*(self.frame.size.height*0.5));
-	CGContextScaleCTM(context, 1.5, 1.5);
+	CGContextScaleCTM(context, 3, 3);
 	CGContextTranslateCTM(context,-1*(_touchPoint.x),-1*(_touchPoint.y));
 	[self.viewToMagnify.layer renderInContext:context];
     
