@@ -72,6 +72,9 @@
 #pragma mark - Server
 - (void)sendColorToHK:(UIColor *)color {
     
+    // Start the active disply
+    [self startActiveDisplay];
+    
     // Translate RGB to integer
     const float* colors = CGColorGetComponents(color.CGColor);
     
@@ -89,8 +92,7 @@
     
     NSLog(@"\nRGB :%@ \nint:  %d\n javaRGB: %d", color, rgb, javaRGB );
     
-#warning don't forget to remove the comment of the SEND
-/*
+
     // Create url and request
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://www.hue-knew.appspot.com/api/request/color;key=something;col=%d", javaRGB]];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
@@ -98,13 +100,25 @@
     // Make request
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"%@", JSON);
+        [self stopActiveDisplay];
+        
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
+        [self stopActiveDisplay];
     }];
     [operation start];
-*/
+
 }
 
+#pragma mark helpers
+- (void)startActiveDisplay {
+    [_activityIndicator setHidden:NO];
+    [_activityIndicator startAnimating];
+}
+- (void)stopActiveDisplay {
+    [_activityIndicator setHidden:YES];
+    [_activityIndicator stopAnimating];
+}
 
 #pragma mark - Photo Library
 
@@ -139,7 +153,6 @@
 #pragma mark - Magnifier Protocol
 
 - (void)updateWithColor:(UIColor *)color {
-    NSLog(@"update with color %@", color);
     [_colorView setBackgroundColor:color];
 }
 
@@ -204,5 +217,9 @@
         default:
             break;
     }
+}
+- (void)viewDidUnload {
+    [self setActivityIndicator:nil];
+    [super viewDidUnload];
 }
 @end

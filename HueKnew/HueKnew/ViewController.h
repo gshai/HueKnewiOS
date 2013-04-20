@@ -26,6 +26,7 @@ OverlayViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *cameraBtn;
 @property (strong, nonatomic) IBOutlet UIButton *albumsBtn;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 - (IBAction)photoLibraryAction:(id)sender;
 - (IBAction)cameraAction:(id)sender;
