@@ -8,21 +8,44 @@
 
 #import "AppDelegate.h"
 
+#import "IIViewDeckController.h"
 #import "ViewController.h"
+#import "SRLeftViewController.h"
+#import "SRRightViewController.h"
 
 @implementation AppDelegate
+@synthesize leftController = _leftController;
+@synthesize rightController = _rightController;
+@synthesize centerController = _centerController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        
+        self.leftController = [[SRLeftViewController alloc] initWithNibName:@"SRLeftViewController" bundle:nil];
+        self.rightController = [[SRRightViewController alloc] initWithNibName:@"SRRightViewController" bundle:nil];
+        ViewController *mainController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        _centerController = [[UINavigationController alloc] initWithRootViewController:mainController];
+        [_centerController.navigationController.navigationBar setHidden:YES];
+        IIViewDeckController *deckController =  [[IIViewDeckController alloc] initWithCenterViewController: _centerController
+                                                                                        leftViewController: _leftController
+                                                                                       rightViewController: _rightController];
+        deckController.rightSize = 100;
+        deckController.leftSize  = 100;
+
+        self.window.rootViewController = deckController;
+        [self.window makeKeyAndVisible];
+        
     } else {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+        self.centerController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+        self.window.rootViewController = self.centerController;
+        [self.window makeKeyAndVisible];
     }
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
+    
+
     return YES;
 }
 

@@ -13,7 +13,10 @@
 
 
 @interface ViewController : UIViewController
-<UIGestureRecognizerDelegate, ColorOfPoint, UIImagePickerControllerDelegate>
+<UIGestureRecognizerDelegate,
+ColorOfPoint,
+UIImagePickerControllerDelegate,
+OverlayViewControllerDelegate>
 
 @property (strong, nonatomic) OverlayViewController *overlayViewController;
 @property (strong, nonatomic) IBOutlet UIButton *sendColorBtn;

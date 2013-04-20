@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIViewController *centerController;
+@property (strong, nonatomic) UIViewController *rightController;
+@property (strong, nonatomic) UIViewController *leftController;
 
-@property (strong, nonatomic) ViewController *viewController;
+
 
 @end

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8726DD51721FF3500F5AD87 /* tick.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D8726DD41721FF3500F5AD87 /* tick.aiff */; };
+		D8726DED17230E8A00F5AD87 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DE817230E8A00F5AD87 /* IISideController.m */; };
+		D8726DEE17230E8A00F5AD87 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DEA17230E8A00F5AD87 /* IIViewDeckController.m */; };
+		D8726DEF17230E8A00F5AD87 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DEC17230E8A00F5AD87 /* IIWrapController.m */; };
+		D8726DF61723111800F5AD87 /* SRLeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726DF01723111800F5AD87 /* SRLeftViewController.xib */; };
+		D8726DF71723111800F5AD87 /* SRRightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726DF11723111800F5AD87 /* SRRightViewController.xib */; };
+		D8726DF81723111800F5AD87 /* SRLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DF41723111800F5AD87 /* SRLeftViewController.m */; };
+		D8726DF91723111800F5AD87 /* SRRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DF51723111800F5AD87 /* SRRightViewController.m */; };
+		D8726DFB1723177D00F5AD87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8726DFA1723177D00F5AD87 /* QuartzCore.framework */; };
 		D8FBC25A17209D1700562FCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25917209D1700562FCE /* UIKit.framework */; };
 		D8FBC25C17209D1700562FCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25B17209D1700562FCE /* Foundation.framework */; };
 		D8FBC25E17209D1700562FCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25D17209D1700562FCE /* CoreGraphics.framework */; };
@@ -40,6 +49,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8726DD41721FF3500F5AD87 /* tick.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = tick.aiff; sourceTree = "<group>"; };
+		D8726DE717230E8A00F5AD87 /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
+		D8726DE817230E8A00F5AD87 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
+		D8726DE917230E8A00F5AD87 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
+		D8726DEA17230E8A00F5AD87 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		D8726DEB17230E8A00F5AD87 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
+		D8726DEC17230E8A00F5AD87 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
+		D8726DF01723111800F5AD87 /* SRLeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SRLeftViewController.xib; path = Classes/SRLeftViewController.xib; sourceTree = "<group>"; };
+		D8726DF11723111800F5AD87 /* SRRightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SRRightViewController.xib; path = Classes/SRRightViewController.xib; sourceTree = "<group>"; };
+		D8726DF21723111800F5AD87 /* SRLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRLeftViewController.h; path = Classes/SRLeftViewController.h; sourceTree = "<group>"; };
+		D8726DF31723111800F5AD87 /* SRRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRRightViewController.h; path = Classes/SRRightViewController.h; sourceTree = "<group>"; };
+		D8726DF41723111800F5AD87 /* SRLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRLeftViewController.m; path = Classes/SRLeftViewController.m; sourceTree = "<group>"; };
+		D8726DF51723111800F5AD87 /* SRRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRRightViewController.m; path = Classes/SRRightViewController.m; sourceTree = "<group>"; };
+		D8726DFA1723177D00F5AD87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D8FBC25517209D1700562FCE /* HueKnew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueKnew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FBC25917209D1700562FCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8FBC25B17209D1700562FCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8726DFB1723177D00F5AD87 /* QuartzCore.framework in Frameworks */,
 				D8FBC2DC1721F43D00562FCE /* AudioToolbox.framework in Frameworks */,
 				D8FBC2B317209EDF00562FCE /* MobileCoreServices.framework in Frameworks */,
 				D8FBC2B117209ED800562FCE /* SystemConfiguration.framework in Frameworks */,
@@ -108,9 +132,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8726DE617230E8A00F5AD87 /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				D8726DE717230E8A00F5AD87 /* IISideController.h */,
+				D8726DE817230E8A00F5AD87 /* IISideController.m */,
+				D8726DE917230E8A00F5AD87 /* IIViewDeckController.h */,
+				D8726DEA17230E8A00F5AD87 /* IIViewDeckController.m */,
+				D8726DEB17230E8A00F5AD87 /* IIWrapController.h */,
+				D8726DEC17230E8A00F5AD87 /* IIWrapController.m */,
+			);
+			path = ViewDeck;
+			sourceTree = "<group>";
+		};
 		D8FBC24A17209D1600562FCE = {
 			isa = PBXGroup;
 			children = (
+				D8726DFA1723177D00F5AD87 /* QuartzCore.framework */,
 				D8FBC2DB1721F43D00562FCE /* AudioToolbox.framework */,
 				D8FBC2B81720A86500562FCE /* Resources */,
 				D8FBC27F17209D7D00562FCE /* Libs */,
@@ -174,6 +212,7 @@
 		D8FBC27F17209D7D00562FCE /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				D8726DE617230E8A00F5AD87 /* ViewDeck */,
 				D8FBC28017209D7D00562FCE /* AFNetworking */,
 			);
 			name = Libs;
@@ -209,6 +248,7 @@
 		D8FBC2B81720A86500562FCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8726DD41721FF3500F5AD87 /* tick.aiff */,
 				D8FBC2B91720A86500562FCE /* sample.png */,
 			);
 			path = Resources;
@@ -220,6 +260,12 @@
 				D8FBC2D51721F14C00562FCE /* OverlayViewController.h */,
 				D8FBC2D61721F14C00562FCE /* OverlayViewController.m */,
 				D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */,
+				D8726DF01723111800F5AD87 /* SRLeftViewController.xib */,
+				D8726DF11723111800F5AD87 /* SRRightViewController.xib */,
+				D8726DF21723111800F5AD87 /* SRLeftViewController.h */,
+				D8726DF31723111800F5AD87 /* SRRightViewController.h */,
+				D8726DF41723111800F5AD87 /* SRLeftViewController.m */,
+				D8726DF51723111800F5AD87 /* SRRightViewController.m */,
 				D8FBC2BB1720B1DD00562FCE /* MagnifierView.h */,
 				D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */,
 			);
@@ -285,6 +331,9 @@
 				D8FBC27917209D1700562FCE /* ViewController_iPad.xib in Resources */,
 				D8FBC2BA1720A86500562FCE /* sample.png in Resources */,
 				D8FBC2D91721F14C00562FCE /* OverlayViewController.xib in Resources */,
+				D8726DD51721FF3500F5AD87 /* tick.aiff in Resources */,
+				D8726DF61723111800F5AD87 /* SRLeftViewController.xib in Resources */,
+				D8726DF71723111800F5AD87 /* SRRightViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +358,11 @@
 				D8FBC29F17209D7E00562FCE /* UIImageView+AFNetworking.m in Sources */,
 				D8FBC2BD1720B1DD00562FCE /* MagnifierView.m in Sources */,
 				D8FBC2D81721F14C00562FCE /* OverlayViewController.m in Sources */,
+				D8726DED17230E8A00F5AD87 /* IISideController.m in Sources */,
+				D8726DEE17230E8A00F5AD87 /* IIViewDeckController.m in Sources */,
+				D8726DEF17230E8A00F5AD87 /* IIWrapController.m in Sources */,
+				D8726DF81723111800F5AD87 /* SRLeftViewController.m in Sources */,
+				D8726DF91723111800F5AD87 /* SRRightViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +405,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -364,8 +419,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -380,13 +436,13 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -397,10 +453,13 @@
 		D8FBC27D17209D1700562FCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HueKnew/HueKnew-Prefix.pch";
 				INFOPLIST_FILE = "HueKnew/HueKnew-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -408,10 +467,15 @@
 		D8FBC27E17209D1700562FCE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HueKnew/HueKnew-Prefix.pch";
 				INFOPLIST_FILE = "HueKnew/HueKnew-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -426,7 +490,7 @@
 				D8FBC27B17209D1700562FCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		D8FBC27C17209D1700562FCE /* Build configuration list for PBXNativeTarget "HueKnew" */ = {
 			isa = XCConfigurationList;
@@ -435,7 +499,7 @@
 				D8FBC27E17209D1700562FCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

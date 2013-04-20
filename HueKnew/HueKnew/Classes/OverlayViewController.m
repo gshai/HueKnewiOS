@@ -86,10 +86,6 @@ enum
     [super viewDidUnload];
 }
 
-- (void)dealloc
-{	
-    
-}
 
 - (void)setupImagePicker:(UIImagePickerControllerSourceType)sourceType
 {
@@ -122,14 +118,13 @@ enum
 - (void)didReceiveMemoryWarning
 {
     // we have been warned that memory is getting low, stop all timers
-    //
     [super didReceiveMemoryWarning];    
 }
 
 // update the UI after an image has been chosen or picture taken
-//
 - (void)finishAndUpdate
 {
+    NSLog(@"finishAndUpdate");
     [self.delegate didFinishWithCamera];  // tell our delegate we are done with the camera
 
     // restore the state of our overlay toolbar buttons
@@ -144,7 +139,6 @@ enum
 - (IBAction)done:(id)sender
 {
     // dismiss the camera
-
     [self finishAndUpdate];
 }
 
@@ -177,8 +171,12 @@ enum
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     
     // give the taken picture to our delegate
-    if (self.delegate)
-        [self.delegate didTakePicture:image];    
+    if (self.delegate) {
+        [self.delegate didTakePicture:image];
+    }
+    
+    // tell the delegate that we are done
+    [self finishAndUpdate];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

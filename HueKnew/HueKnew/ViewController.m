@@ -31,6 +31,13 @@
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
     pan.delegate = self;
     [_imageView addGestureRecognizer:pan];
+    
+    self.overlayViewController =
+    [[OverlayViewController alloc] initWithNibName:@"OverlayViewController" bundle:nil] ;
+    
+    // as a delegate we will be notified when pictures are taken and when to dismiss the image picker
+    _overlayViewController.delegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,15 +46,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
+}
 
 #pragma mark - Actions
 
 - (IBAction)photoLibraryAction:(id)sender {
     [self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
+    _sendColorBtn.enabled = NO;
 }
 
 - (IBAction)cameraAction:(id)sender {
     [self showImagePicker:UIImagePickerControllerSourceTypeCamera];
+    _sendColorBtn.enabled = NO;
 }
 
 - (IBAction)sendColor:(id)sender {
@@ -105,7 +117,7 @@
     if ([UIImagePickerController isSourceTypeAvailable:sourceType])
     {
         [self.overlayViewController setupImagePicker:sourceType];
-        [self presentModalViewController:self.overlayViewController.imagePickerController animated:YES];
+        [self presentModalViewController:_overlayViewController.imagePickerController animated:YES];
     }
 }
 
@@ -129,6 +141,24 @@
 - (void)updateWithColor:(UIColor *)color {
     NSLog(@"update with color %@", color);
     [_colorView setBackgroundColor:color];
+}
+
+
+#pragma mark - Overlay Protocol
+
+- (void)didTakePicture:(UIImage *)picture {
+    if (!picture) {
+        NSLog(@"picture is nil");
+        return;
+    }
+    
+    [_imageView setImage:picture];
+}
+
+- (void)didFinishWithCamera {
+    [self dismissModalViewControllerAnimated:YES];
+    NSLog(@"should present the new image");
+//    [_imageView setImage:picture];
 }
 
 
@@ -167,6 +197,7 @@
             NSLog(@"drag ended");
             [_mag removeFromSuperview];
             _mag = nil;
+            _sendColorBtn.enabled = YES;
         }
             break;
             
