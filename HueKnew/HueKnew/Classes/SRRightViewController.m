@@ -9,6 +9,7 @@
 #import "SRRightViewController.h"
 #import "IIViewDeckController.h"
 #import "ViewController.h"
+#import "MainColorAnalyticsCell.h"
 
 @interface SRRightViewController ()
 
@@ -49,33 +50,55 @@
     return 4;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"heightForRowAtIndexPath %d", indexPath.row);
+    switch (indexPath.row) {
+        case 0: {
+            return 100.0;
+        }
+            break;
+        case 1: {
+            return 60.0;
+        }
+            break;
+            
+        default:            
+            break;
+    }
+    return 40.0;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"MainColorAnalyticsCell";
+    
+    switch (indexPath.row) {
+        case 0: {
+            CellIdentifier = @"MainColorAnalyticsCell";
+            MainColorAnalyticsCell *cell = (MainColorAnalyticsCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MainColorAnalyticsCell" owner:nil options:nil];
+                cell = [nib objectAtIndex:0];
+            }
+            cell.colorNameLabel.text = @"Camel";
+            cell.yearLabel.text = @"2013";
+            [cell.viewForBaselineLayout setBackgroundColor:[UIColor greenColor]];
+            return cell;
+        }
+            break;
+        default: {
+            CellIdentifier = @"Cell";
+        }
+            break;
+    }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
-    switch (indexPath.row) {
-        case 0:
-            cell.textLabel.text = @"Welcome Jon";
-            break;
-        case 1:
-            cell.textLabel.text = @"History";
-            break;
-        case 2:
-            cell.textLabel.text = @"Settings";
-            break;
-        case 3:
-            cell.textLabel.text = @"Holds";
-            break;
-            
-        default:
-            break;
-    }
-    
+    NSLog(@"created %@ cell", CellIdentifier);
     return cell;
 }
 
@@ -150,4 +173,9 @@
     }];
 }
 
+- (void)viewDidUnload {
+    [self setDesignerCell:nil];
+    [self setMainCell:nil];
+    [super viewDidUnload];
+}
 @end

@@ -16,6 +16,11 @@
 		D8726DF81723111800F5AD87 /* SRLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DF41723111800F5AD87 /* SRLeftViewController.m */; };
 		D8726DF91723111800F5AD87 /* SRRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DF51723111800F5AD87 /* SRRightViewController.m */; };
 		D8726DFB1723177D00F5AD87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8726DFA1723177D00F5AD87 /* QuartzCore.framework */; };
+		D8726DFF1724268B00F5AD87 /* SRHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DFD1724268A00F5AD87 /* SRHUDViewController.m */; };
+		D8726E001724268B00F5AD87 /* SRHUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726DFE1724268A00F5AD87 /* SRHUDViewController.xib */; };
+		D8726E0217242BED00F5AD87 /* hudElement.png in Resources */ = {isa = PBXBuildFile; fileRef = D8726E0117242BED00F5AD87 /* hudElement.png */; };
+		D8726E0E1724DD7100F5AD87 /* MainColorAnalyticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726E0D1724DD7000F5AD87 /* MainColorAnalyticsCell.xib */; };
+		D8726E111724DDB500F5AD87 /* MainColorAnalyticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726E101724DDB500F5AD87 /* MainColorAnalyticsCell.m */; };
 		D8FBC25A17209D1700562FCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25917209D1700562FCE /* UIKit.framework */; };
 		D8FBC25C17209D1700562FCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25B17209D1700562FCE /* Foundation.framework */; };
 		D8FBC25E17209D1700562FCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25D17209D1700562FCE /* CoreGraphics.framework */; };
@@ -63,6 +68,13 @@
 		D8726DF41723111800F5AD87 /* SRLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRLeftViewController.m; path = Classes/SRLeftViewController.m; sourceTree = "<group>"; };
 		D8726DF51723111800F5AD87 /* SRRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRRightViewController.m; path = Classes/SRRightViewController.m; sourceTree = "<group>"; };
 		D8726DFA1723177D00F5AD87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D8726DFC1724268900F5AD87 /* SRHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRHUDViewController.h; path = Classes/SRHUDViewController.h; sourceTree = "<group>"; };
+		D8726DFD1724268A00F5AD87 /* SRHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRHUDViewController.m; path = Classes/SRHUDViewController.m; sourceTree = "<group>"; };
+		D8726DFE1724268A00F5AD87 /* SRHUDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SRHUDViewController.xib; path = Classes/SRHUDViewController.xib; sourceTree = "<group>"; };
+		D8726E0117242BED00F5AD87 /* hudElement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hudElement.png; sourceTree = "<group>"; };
+		D8726E0D1724DD7000F5AD87 /* MainColorAnalyticsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainColorAnalyticsCell.xib; path = Classes/MainColorAnalyticsCell.xib; sourceTree = "<group>"; };
+		D8726E0F1724DDB400F5AD87 /* MainColorAnalyticsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainColorAnalyticsCell.h; path = Classes/MainColorAnalyticsCell.h; sourceTree = "<group>"; };
+		D8726E101724DDB500F5AD87 /* MainColorAnalyticsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainColorAnalyticsCell.m; path = Classes/MainColorAnalyticsCell.m; sourceTree = "<group>"; };
 		D8FBC25517209D1700562FCE /* HueKnew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueKnew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FBC25917209D1700562FCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8FBC25B17209D1700562FCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -248,6 +260,7 @@
 		D8FBC2B81720A86500562FCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8726E0117242BED00F5AD87 /* hudElement.png */,
 				D8726DD41721FF3500F5AD87 /* tick.aiff */,
 				D8FBC2B91720A86500562FCE /* sample.png */,
 			);
@@ -266,6 +279,12 @@
 				D8726DF31723111800F5AD87 /* SRRightViewController.h */,
 				D8726DF41723111800F5AD87 /* SRLeftViewController.m */,
 				D8726DF51723111800F5AD87 /* SRRightViewController.m */,
+				D8726E0D1724DD7000F5AD87 /* MainColorAnalyticsCell.xib */,
+				D8726E0F1724DDB400F5AD87 /* MainColorAnalyticsCell.h */,
+				D8726E101724DDB500F5AD87 /* MainColorAnalyticsCell.m */,
+				D8726DFC1724268900F5AD87 /* SRHUDViewController.h */,
+				D8726DFD1724268A00F5AD87 /* SRHUDViewController.m */,
+				D8726DFE1724268A00F5AD87 /* SRHUDViewController.xib */,
 				D8FBC2BB1720B1DD00562FCE /* MagnifierView.h */,
 				D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */,
 			);
@@ -334,6 +353,9 @@
 				D8726DD51721FF3500F5AD87 /* tick.aiff in Resources */,
 				D8726DF61723111800F5AD87 /* SRLeftViewController.xib in Resources */,
 				D8726DF71723111800F5AD87 /* SRRightViewController.xib in Resources */,
+				D8726E001724268B00F5AD87 /* SRHUDViewController.xib in Resources */,
+				D8726E0217242BED00F5AD87 /* hudElement.png in Resources */,
+				D8726E0E1724DD7100F5AD87 /* MainColorAnalyticsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +385,8 @@
 				D8726DEF17230E8A00F5AD87 /* IIWrapController.m in Sources */,
 				D8726DF81723111800F5AD87 /* SRLeftViewController.m in Sources */,
 				D8726DF91723111800F5AD87 /* SRRightViewController.m in Sources */,
+				D8726DFF1724268B00F5AD87 /* SRHUDViewController.m in Sources */,
+				D8726E111724DDB500F5AD87 /* MainColorAnalyticsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

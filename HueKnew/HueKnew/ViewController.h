@@ -10,23 +10,37 @@
 #import "MagnifierView.h"
 #import <AudioToolbox/AudioServices.h>
 #import "OverlayViewController.h"
+#import "SRHUDViewController.h"
 
+typedef enum {
+    START,
+    IMAGEINVIEW,
+    HASANALYTICS,
+} APPSTATE;
 
 @interface ViewController : UIViewController
 <UIGestureRecognizerDelegate,
 ColorOfPoint,
 UIImagePickerControllerDelegate,
-OverlayViewControllerDelegate>
+OverlayViewControllerDelegate> {
+    APPSTATE appState;
+}
 
 @property (strong, nonatomic) OverlayViewController *overlayViewController;
 @property (strong, nonatomic) IBOutlet UIButton *sendColorBtn;
 @property (strong, nonatomic) IBOutlet UIView *colorView;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) MagnifierView *mag;
+@property (strong, nonatomic) IBOutlet UIView *colorTrayView;
 
+@property (strong, nonatomic) IBOutlet UIView *picBtnsTrayView;
 @property (strong, nonatomic) IBOutlet UIButton *cameraBtn;
 @property (strong, nonatomic) IBOutlet UIButton *albumsBtn;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) IBOutlet UIView *panningView;
+@property (strong, nonatomic) SRHUDViewController *hud;
+
+
 
 - (IBAction)photoLibraryAction:(id)sender;
 - (IBAction)cameraAction:(id)sender;

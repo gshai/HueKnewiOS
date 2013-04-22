@@ -14,6 +14,7 @@
 
 
 @interface MagnifierView : UIView
+<UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong)   UIView  *viewToMagnify;
 @property (nonatomic, strong)   NSObject<ColorOfPoint> *delegate;

@@ -125,7 +125,7 @@ enum
 - (void)finishAndUpdate
 {
     NSLog(@"finishAndUpdate");
-    [self.delegate didFinishWithCamera];  // tell our delegate we are done with the camera
+    [self.delegate didFinishWithPicker];  // tell our delegate we are done with the camera
 
     // restore the state of our overlay toolbar buttons
     self.cancelButton.enabled = YES;
@@ -181,7 +181,7 @@ enum
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [self.delegate didFinishWithCamera];    // tell our delegate we are finished with the picker
+    [self.delegate didFinishWithPicker];    // tell our delegate we are finished with the picker
 }
 
 @end

@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "AFNetworking.h"
+#import "IIViewDeckController.h"
+#import "SRHUDViewController.h"
+#import "SRRightViewController.h"
 
 @interface ViewController ()
 
@@ -19,7 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    appState = START;
     _mag = nil;
     
 	// Do any additional setup after loading the view, typically from a nib.
@@ -38,6 +42,14 @@
     // as a delegate we will be notified when pictures are taken and when to dismiss the image picker
     _overlayViewController.delegate = self;
 
+    // prevent panning of the view
+    self.viewDeckController.panningView = _panningView;
+    self.viewDeckController.panningMode = IIViewDeckPanningViewPanning;//IIViewDeckNoPanning;
+    
+    // place btn tray out side of view
+    _picBtnsTrayView.frame = CGRectMake(0, self.view.frame.size.height, _picBtnsTrayView.frame.size.width, _picBtnsTrayView.frame.size.height);
+    _colorTrayView.frame = CGRectMake(0, self.view.frame.size.height, _colorTrayView.frame.size.width, _colorTrayView.frame.size.height);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +60,19 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
+    
+    // Slide in the btn tray
+    if (appState == START) {
+        [self slideInPicBtns];
+    }
+}
+
+- (void)viewDidUnload {
+    [self setActivityIndicator:nil];
+    [self setPanningView:nil];
+    [self setPicBtnsTrayView:nil];
+    [self setColorTrayView:nil];
+    [super viewDidUnload];
 }
 
 #pragma mark - Actions
@@ -63,6 +88,7 @@
 }
 
 - (IBAction)sendColor:(id)sender {
+    NSLog(@"sendColorBtn");
     
     // get color from colorView
     UIColor *color = _colorView.backgroundColor;
@@ -98,8 +124,9 @@
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     // Make request
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"%@", JSON);
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id json) {
+        appState = HASANALYTICS;
+        [self updateVCsWithData:json];
         [self stopActiveDisplay];
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
@@ -111,14 +138,58 @@
 }
 
 #pragma mark helpers
-- (void)startActiveDisplay {
-    [_activityIndicator setHidden:NO];
-    [_activityIndicator startAnimating];
+
+- (void)startActiveDisplay { 
+    _hud = [[SRHUDViewController alloc] initWithColor:_colorView.backgroundColor];
+    _hud.view.center = _imageView.center;
+    [self.view addSubview:_hud.view];
+    [_hud startAnimatingView];
 }
 - (void)stopActiveDisplay {
-    [_activityIndicator setHidden:YES];
-    [_activityIndicator stopAnimating];
+    NSLog(@"stopActiveDisplay");
+    
+    [_hud stopAnimatingView];
+    [_hud.view removeFromSuperview];
+    [_hud removeFromParentViewController];
+    _hud = nil;
+    
+    self.viewDeckController.panningView = _panningView;
+    self.viewDeckController.panningMode = IIViewDeckPanningViewPanning;
 }
+- (void)updateVCsWithData:(id)json {
+    NSLog(@"Processing JSON: %@", json);
+    
+    self.viewDeckController.rightController = [[SRRightViewController alloc] initWithNibName:@"SRRightViewController" bundle:nil];
+}
+
+#pragma mark Animations
+- (void)slideInPicBtns {
+    [UIView animateWithDuration:0.5 animations:^{
+        _picBtnsTrayView.hidden = NO;
+        _picBtnsTrayView.frame = CGRectMake(0, self.view.frame.size.height - _picBtnsTrayView.frame.size.height, _picBtnsTrayView.frame.size.width, _picBtnsTrayView.frame.size.height);
+    }];
+}
+- (void)slideOutPicBtns {
+    [UIView animateWithDuration:0.3 animations:^{
+        _picBtnsTrayView.frame = CGRectMake(0, self.view.frame.size.height, _picBtnsTrayView.frame.size.width, _picBtnsTrayView.frame.size.height);
+    }completion:^(BOOL finished) {
+        _picBtnsTrayView.hidden = YES;
+    }];
+}
+- (void)slideInColorTray {
+    [UIView animateWithDuration:0.5 animations:^{
+        _colorTrayView.hidden = NO;
+        _colorTrayView.frame = CGRectMake(0, self.view.frame.size.height - _colorTrayView.frame.size.height, _colorTrayView.frame.size.width, _colorTrayView.frame.size.height);
+    }];
+}
+- (void)slideOutColorTray {
+    [UIView animateWithDuration:0.3 animations:^{
+        _colorTrayView.frame = CGRectMake(0, self.view.frame.size.height, _colorTrayView.frame.size.width, _colorTrayView.frame.size.height);
+    }completion:^(BOOL finished) {
+        _colorTrayView.hidden = YES;
+    }];
+}
+
 
 #pragma mark - Photo Library
 
@@ -160,20 +231,41 @@
 #pragma mark - Overlay Protocol
 
 - (void)didTakePicture:(UIImage *)picture {
+    NSLog(@"didTakePicture");
+    
     if (!picture) {
         NSLog(@"picture is nil");
         return;
     }
-    
-    [_imageView setImage:picture];
+    [self deviceBackWithImage:picture];
 }
 
-- (void)didFinishWithCamera {
+- (void)didFinishWithPicker {
+    NSLog(@"didFinishWithPicker - dismiss it");
     [self dismissModalViewControllerAnimated:YES];
-    NSLog(@"should present the new image");
-//    [_imageView setImage:picture];
 }
 
+- (void)deviceBackWithImage:(UIImage *)picture {
+    if (!picture) {
+        NSLog(@"Error - we don't have an image to present");
+        return;
+    }
+    
+    // update state
+    appState = IMAGEINVIEW;
+    
+    // update image
+    [_imageView setImage:picture];
+    
+    // set view
+    [self slideOutPicBtns];
+    [self slideInColorTray];
+
+    [self createMagnifierWithPoint:self.view.center];
+    [self.view addSubview:_mag];
+    [self.view bringSubviewToFront:_mag];
+
+}
 
 #pragma mark - Gestures Protocol
 
@@ -185,8 +277,23 @@
 - (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer
 {
     NSLog(@"tapDetected");
-    // create or destroy magnifier
-    
+
+    if (appState == START) {
+        // Slide in or out the camera btns tray
+        if (_picBtnsTrayView.hidden) {
+            [self slideInPicBtns];
+        } else {
+            [self slideOutPicBtns];
+        }
+    } else if (appState == IMAGEINVIEW) {
+        if (_picBtnsTrayView.hidden) {
+            [self slideOutColorTray];
+            [self slideInPicBtns];
+        } else {
+            [self slideOutPicBtns];
+            [self slideInColorTray];
+        }
+    }
 }
 
 - (void)panDetected:(UIPanGestureRecognizer *)pan {
@@ -195,21 +302,16 @@
     switch (pan.state) {
         case UIGestureRecognizerStateBegan: {
             NSLog(@"started the drag");
-            [self createMagnifierWithPoint:point];
-            [_imageView addSubview:_mag];
-            [_imageView bringSubviewToFront:_mag];
         }
             break;
         case UIGestureRecognizerStateChanged: {            
-            NSLog(@"dragging x:%f y: %f", point.x, point.y);
+//            NSLog(@"dragging x:%f y: %f", point.x, point.y);
             _mag.touchPoint = point;
             [_mag setNeedsDisplay];
         }
             break;
         case UIGestureRecognizerStateEnded: {            
             NSLog(@"drag ended");
-            [_mag removeFromSuperview];
-            _mag = nil;
             _sendColorBtn.enabled = YES;
         }
             break;
@@ -217,9 +319,5 @@
         default:
             break;
     }
-}
-- (void)viewDidUnload {
-    [self setActivityIndicator:nil];
-    [super viewDidUnload];
 }
 @end

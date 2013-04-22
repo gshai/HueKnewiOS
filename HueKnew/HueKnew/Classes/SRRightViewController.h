@@ -10,5 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface SRRightViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UITableViewCell *designerCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *mainCell;
 
 @end

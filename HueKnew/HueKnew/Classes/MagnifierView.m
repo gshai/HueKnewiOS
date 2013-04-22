@@ -19,6 +19,14 @@
 		self.layer.borderWidth = 3;
 		self.layer.cornerRadius = 40;
 		self.layer.masksToBounds = YES;
+        
+        
+        
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
+        tapRecognizer.numberOfTapsRequired = 1;
+        tapRecognizer.delegate = self;
+        [self addGestureRecognizer:tapRecognizer];
+
 	}
 	return self;
 }
@@ -63,4 +71,17 @@
     
     return color;
 }
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+- (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer
+{
+    NSLog(@"magnifier - tapDetected");
+    
+ 
+}
+
 @end

@@ -26,15 +26,15 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         
         self.leftController = [[SRLeftViewController alloc] initWithNibName:@"SRLeftViewController" bundle:nil];
-        self.rightController = [[SRRightViewController alloc] initWithNibName:@"SRRightViewController" bundle:nil];
+        self.rightController = nil;//[[SRRightViewController alloc] initWithNibName:@"SRRightViewController" bundle:nil];
         ViewController *mainController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
         _centerController = [[UINavigationController alloc] initWithRootViewController:mainController];
         [_centerController.navigationController.navigationBar setHidden:YES];
         IIViewDeckController *deckController =  [[IIViewDeckController alloc] initWithCenterViewController: _centerController
                                                                                         leftViewController: _leftController
                                                                                        rightViewController: _rightController];
-        deckController.rightSize = 100;
-        deckController.leftSize  = 100;
+        deckController.rightSize = 20;
+        deckController.leftSize  = 20;
 
         self.window.rootViewController = deckController;
         [self.window makeKeyAndVisible];

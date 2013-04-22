@@ -79,5 +79,5 @@
 
 @protocol OverlayViewControllerDelegate
 - (void)didTakePicture:(UIImage *)picture;
-- (void)didFinishWithCamera;
+- (void)didFinishWithPicker;
 @end
