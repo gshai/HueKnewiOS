@@ -10,6 +10,7 @@
 #import "IIViewDeckController.h"
 #import "ViewController.h"
 #import "MainColorAnalyticsCell.h"
+#import "CityColorAnalyticsCell.h"
 
 @interface SRRightViewController ()
 
@@ -17,11 +18,12 @@
 
 @implementation SRRightViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andDictionary:(NSDictionary *)dict
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _configDict = dict;
     }
     return self;
 }
@@ -54,11 +56,11 @@
     NSLog(@"heightForRowAtIndexPath %d", indexPath.row);
     switch (indexPath.row) {
         case 0: {
-            return 100.0;
+            return 130.0;
         }
             break;
         case 1: {
-            return 60.0;
+            return 100.0;
         }
             break;
             
@@ -82,11 +84,37 @@
                 cell = [nib objectAtIndex:0];
             }
             cell.colorNameLabel.text = @"Camel";
+            cell.rankingLabel.text = @"Rank 33%";
+            cell.likesLabel.text = @"Liked 55 times";
             cell.yearLabel.text = @"2013";
-            [cell.viewForBaselineLayout setBackgroundColor:[UIColor greenColor]];
             return cell;
         }
             break;
+        case 1: {
+            CellIdentifier = @"CityColorAnalyticsCell";
+            CityColorAnalyticsCell *cell = (CityColorAnalyticsCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            if (cell == nil) {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CityColorAnalyticsCell" owner:nil options:nil];
+                cell = [nib objectAtIndex:0];
+            }
+            
+            // Set the cell's labels value
+            cell.precLabel1.text = [NSString stringWithFormat:@"%d%%", 33];
+            cell.precLabel2.text = [NSString stringWithFormat:@"%d%%", 33];
+            cell.precLabel3.text = [NSString stringWithFormat:@"%d%%", 33];
+            cell.cityLabel1.text = @"MIL";
+            cell.cityLabel2.text = @"NYC";
+            cell.cityLabel3.text = @"TLV";
+            
+            
+            cell.precLabel1.textColor = _primeColor;
+            cell.precLabel2.textColor = _primeColor;
+            cell.precLabel3.textColor = _primeColor;
+            
+            return cell;
+        }
+            break;
+
         default: {
             CellIdentifier = @"Cell";
         }
@@ -177,5 +205,13 @@
     [self setDesignerCell:nil];
     [self setMainCell:nil];
     [super viewDidUnload];
+}
+
+#pragma mark - Configuration
+- (void)configWithJSON:(id)json {
+    _configDict = (NSDictionary *)json;
+}
+- (void)configWithDict:(NSDictionary *)dict {
+    _configDict = dict;    
 }
 @end

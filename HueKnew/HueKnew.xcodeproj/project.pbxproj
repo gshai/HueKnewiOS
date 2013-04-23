@@ -21,6 +21,8 @@
 		D8726E0217242BED00F5AD87 /* hudElement.png in Resources */ = {isa = PBXBuildFile; fileRef = D8726E0117242BED00F5AD87 /* hudElement.png */; };
 		D8726E0E1724DD7100F5AD87 /* MainColorAnalyticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726E0D1724DD7000F5AD87 /* MainColorAnalyticsCell.xib */; };
 		D8726E111724DDB500F5AD87 /* MainColorAnalyticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726E101724DDB500F5AD87 /* MainColorAnalyticsCell.m */; };
+		D8726E1F172639FE00F5AD87 /* CityColorAnalyticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726E1C172639FC00F5AD87 /* CityColorAnalyticsCell.xib */; };
+		D8726E20172639FE00F5AD87 /* CityColorAnalyticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726E1D172639FD00F5AD87 /* CityColorAnalyticsCell.m */; };
 		D8FBC25A17209D1700562FCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25917209D1700562FCE /* UIKit.framework */; };
 		D8FBC25C17209D1700562FCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25B17209D1700562FCE /* Foundation.framework */; };
 		D8FBC25E17209D1700562FCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25D17209D1700562FCE /* CoreGraphics.framework */; };
@@ -75,6 +77,9 @@
 		D8726E0D1724DD7000F5AD87 /* MainColorAnalyticsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainColorAnalyticsCell.xib; path = Classes/MainColorAnalyticsCell.xib; sourceTree = "<group>"; };
 		D8726E0F1724DDB400F5AD87 /* MainColorAnalyticsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainColorAnalyticsCell.h; path = Classes/MainColorAnalyticsCell.h; sourceTree = "<group>"; };
 		D8726E101724DDB500F5AD87 /* MainColorAnalyticsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainColorAnalyticsCell.m; path = Classes/MainColorAnalyticsCell.m; sourceTree = "<group>"; };
+		D8726E1C172639FC00F5AD87 /* CityColorAnalyticsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CityColorAnalyticsCell.xib; path = Classes/CityColorAnalyticsCell.xib; sourceTree = "<group>"; };
+		D8726E1D172639FD00F5AD87 /* CityColorAnalyticsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityColorAnalyticsCell.m; path = Classes/CityColorAnalyticsCell.m; sourceTree = "<group>"; };
+		D8726E1E172639FD00F5AD87 /* CityColorAnalyticsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityColorAnalyticsCell.h; path = Classes/CityColorAnalyticsCell.h; sourceTree = "<group>"; };
 		D8FBC25517209D1700562FCE /* HueKnew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueKnew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FBC25917209D1700562FCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8FBC25B17209D1700562FCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -155,6 +160,19 @@
 				D8726DEC17230E8A00F5AD87 /* IIWrapController.m */,
 			);
 			path = ViewDeck;
+			sourceTree = "<group>";
+		};
+		D8726E2217263A1900F5AD87 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D8726E0D1724DD7000F5AD87 /* MainColorAnalyticsCell.xib */,
+				D8726E0F1724DDB400F5AD87 /* MainColorAnalyticsCell.h */,
+				D8726E101724DDB500F5AD87 /* MainColorAnalyticsCell.m */,
+				D8726E1C172639FC00F5AD87 /* CityColorAnalyticsCell.xib */,
+				D8726E1D172639FD00F5AD87 /* CityColorAnalyticsCell.m */,
+				D8726E1E172639FD00F5AD87 /* CityColorAnalyticsCell.h */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		D8FBC24A17209D1600562FCE = {
@@ -270,18 +288,16 @@
 		D8FBC2BE1720B1E900562FCE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D8726E2217263A1900F5AD87 /* Cells */,
 				D8FBC2D51721F14C00562FCE /* OverlayViewController.h */,
 				D8FBC2D61721F14C00562FCE /* OverlayViewController.m */,
 				D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */,
 				D8726DF01723111800F5AD87 /* SRLeftViewController.xib */,
 				D8726DF11723111800F5AD87 /* SRRightViewController.xib */,
 				D8726DF21723111800F5AD87 /* SRLeftViewController.h */,
-				D8726DF31723111800F5AD87 /* SRRightViewController.h */,
 				D8726DF41723111800F5AD87 /* SRLeftViewController.m */,
+				D8726DF31723111800F5AD87 /* SRRightViewController.h */,
 				D8726DF51723111800F5AD87 /* SRRightViewController.m */,
-				D8726E0D1724DD7000F5AD87 /* MainColorAnalyticsCell.xib */,
-				D8726E0F1724DDB400F5AD87 /* MainColorAnalyticsCell.h */,
-				D8726E101724DDB500F5AD87 /* MainColorAnalyticsCell.m */,
 				D8726DFC1724268900F5AD87 /* SRHUDViewController.h */,
 				D8726DFD1724268A00F5AD87 /* SRHUDViewController.m */,
 				D8726DFE1724268A00F5AD87 /* SRHUDViewController.xib */,
@@ -356,6 +372,7 @@
 				D8726E001724268B00F5AD87 /* SRHUDViewController.xib in Resources */,
 				D8726E0217242BED00F5AD87 /* hudElement.png in Resources */,
 				D8726E0E1724DD7100F5AD87 /* MainColorAnalyticsCell.xib in Resources */,
+				D8726E1F172639FE00F5AD87 /* CityColorAnalyticsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +404,7 @@
 				D8726DF91723111800F5AD87 /* SRRightViewController.m in Sources */,
 				D8726DFF1724268B00F5AD87 /* SRHUDViewController.m in Sources */,
 				D8726E111724DDB500F5AD87 /* MainColorAnalyticsCell.m in Sources */,
+				D8726E20172639FE00F5AD87 /* CityColorAnalyticsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

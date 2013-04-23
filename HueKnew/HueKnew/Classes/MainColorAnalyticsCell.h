@@ -1,5 +1,5 @@
 //
-//  MainColorAnalyticsCell.h
+//  MainColorAnalyticsCell.h.h
 //  HueKnew
 //
 //  Created by Gilad Shai on 4/21/13.

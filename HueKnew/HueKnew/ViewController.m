@@ -156,10 +156,13 @@
     self.viewDeckController.panningView = _panningView;
     self.viewDeckController.panningMode = IIViewDeckPanningViewPanning;
 }
-- (void)updateVCsWithData:(id)json {
-    NSLog(@"Processing JSON: %@", json);
+- (void)updateVCsWithData:(id)json {    
+    NSDictionary *dict = [NSDictionary dictionaryWithDictionary:(NSDictionary *)json];
+    NSLog(@"Processing JSON dict: %@", dict);
     
-    self.viewDeckController.rightController = [[SRRightViewController alloc] initWithNibName:@"SRRightViewController" bundle:nil];
+    self.viewDeckController.rightController = [[SRRightViewController alloc] initWithNibName:@"SRRightViewController" bundle:nil andDictionary:dict];
+    [(SRRightViewController *)self.viewDeckController.rightController setPrimeColor:_colorView.backgroundColor];
+
 }
 
 #pragma mark Animations
@@ -293,7 +296,16 @@
             [self slideOutPicBtns];
             [self slideInColorTray];
         }
+    } else if (appState == HASANALYTICS) {
+    if (_picBtnsTrayView.hidden) {
+        [self slideOutColorTray];
+        [self slideInPicBtns];
+    } else {
+        [self slideOutPicBtns];
+        [self slideInColorTray];
     }
+}
+
 }
 
 - (void)panDetected:(UIPanGestureRecognizer *)pan {
