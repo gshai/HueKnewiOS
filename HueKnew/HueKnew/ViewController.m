@@ -120,7 +120,7 @@
     
 
     // Create url and request
-    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://www.hue-knew.appspot.com/api/request/color;key=something;col=%d", javaRGB]];
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://www.hue-knew.appspot.com/api/request/color;key=monsieurgiladshai;col=%d", javaRGB]];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     // Make request
@@ -131,6 +131,10 @@
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
+
+        appState = HASANALYTICS;
+        id json = [self getMockCallback];
+        [self updateVCsWithData:json];        
         [self stopActiveDisplay];
     }];
     [operation start];
@@ -331,5 +335,26 @@
         default:
             break;
     }
+}
+
+
+#pragma mark - Mockup
+
+//reply to //www.hue-knew.appspot.com/api/request/color;key=monsieurgiladshai;col=rgb(234,23,56)
+- (NSDictionary *)getMockCallback {
+    NSDictionary *dict = [self dictionaryWithContentsOfJSONString:@"color.json"];
+    return dict;
+}
+-(NSDictionary*)dictionaryWithContentsOfJSONString:(NSString*)fileLocation{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:[fileLocation stringByDeletingPathExtension] ofType:[fileLocation pathExtension]];
+    NSData* data = [NSData dataWithContentsOfFile:filePath];
+    __autoreleasing NSError* error = nil;
+    id result = [NSJSONSerialization JSONObjectWithData:data
+                                                options:kNilOptions error:&error];
+    // Be careful here. You add this as a category to NSDictionary
+    // but you get an id back, which means that result
+    // might be an NSArray as well!
+    if (error != nil) return nil;
+    return result;
 }
 @end

@@ -1,0 +1,66 @@
+{
+    "color_stats": {
+        "name": "Camel",
+        "rgb": "rgb(234,23,56)",
+        "ranking": 33,
+        "likes": 132,
+        "year": 2013,
+        "percent": 57,
+        "subcolors": [
+                      {
+                      "rgb": "100,20,255",
+                      "percent": 84
+                      },
+                      {
+                      "rgb": "222,111,255",
+                      "percent": 32
+                      },
+                      {
+                      "rgb": "100,120,200",
+                      "percent": 14
+                      }
+                      ]
+    },
+    "cities": [
+               {
+               "name": "NYC",
+               "percent": 14
+               },
+               {
+               "name": "LON",
+               "percent": 40
+               },
+               {
+               "name": "MIL",
+               "percent": 30
+               }
+               ],
+    "category": [
+                 {
+                 "category": "mens",
+                 "percent": 33
+                 },
+                 {
+                 "category": "womens",
+                 "percent": 67
+                 },
+                 {
+                 "category": "children",
+                 "percent": 12
+                 }
+                 ],
+    "designers": [
+                  {
+                  "name": "LANVIN",
+                  "season": "Fall 2013",
+                  "topsPercent": 37,
+                  "bottomsPercent": 22
+                  },
+                  {
+                  "name": "MARC JACOBS",
+                  "season": "Fall 2013",
+                  "topsPercent": 22,
+                  "bottomsPercent": 47
+                  }
+                  ]
+}

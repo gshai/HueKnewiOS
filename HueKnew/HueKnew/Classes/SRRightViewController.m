@@ -83,10 +83,11 @@
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MainColorAnalyticsCell" owner:nil options:nil];
                 cell = [nib objectAtIndex:0];
             }
-            cell.colorNameLabel.text = @"Camel";
-            cell.rankingLabel.text = @"Rank 33%";
-            cell.likesLabel.text = @"Liked 55 times";
-            cell.yearLabel.text = @"2013";
+            [cell configureWithDictionary:[_configDict objectForKey:@"color_stats"]];
+//            cell.colorNameLabel.text = @"Camel";
+//            cell.rankingLabel.text = @"Rank 33%";
+//            cell.likesLabel.text = @"Liked 55 times";
+//            cell.yearLabel.text = @"2013";
             return cell;
         }
             break;

@@ -20,5 +20,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *rankingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
+@property (strong, nonatomic) IBOutlet UILabel *colorP0;
+@property (strong, nonatomic) IBOutlet UILabel *colorP1;
+@property (strong, nonatomic) IBOutlet UILabel *colorP2;
+@property (strong, nonatomic) IBOutlet UILabel *colorP3;
 
+
+
+- (BOOL)configureWithDictionary:(NSDictionary *)config;
 @end
