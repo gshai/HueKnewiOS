@@ -12,6 +12,7 @@
 #import "MainColorAnalyticsCell.h"
 #import "CityColorAnalyticsCell.h"
 #import "DesignerColorAnalyticsCell.h"
+#import "WishListViewController.h"
 
 @interface SRRightViewController ()
 
@@ -164,18 +165,7 @@
              */
         }
             break;
-            
-        case 2: {
-            NSLog(@"choose row 3!\nWe should not do anything at this point\nlater we can dispaly data for Color or Designer");
-            /*
-            self.viewDeckController.rightController = SharedAppDelegate.rightController;            
-            SRSettingsViewController *nestController1 = [[SRSettingsViewController alloc] initWithNibName:@"SRSettingsViewController" bundle:nil];
-            UINavigationController *navController1 = [[UINavigationController alloc] initWithRootViewController:nestController1];
-            self.viewDeckController.centerController = navController1;
-             */
-        }
-            break;
-                        
+                                    
         default: {
             /*
             self.viewDeckController.rightController = SharedAppDelegate.rightController;
@@ -183,11 +173,24 @@
             UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:nestController];
             self.viewDeckController.centerController = navController;
              */
+            
+            WishListViewController *vc = [[WishListViewController alloc] initWithNibName:@"WishListViewController" bundle:nil];
+//            UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:vc];
+            
+            NSLog(@"%@",self.viewDeckController.rightController.navigationController );
+            NSLog(@"%@",self.viewDeckController.centerController.navigationController );
+
+            [self.navigationController pushViewController:vc animated:YES];
+            [self.navigationController.navigationBar setHidden:NO];
+
+//            [self presentViewController:vc animated:YES completion:nil];
         }
             break;
     }
     
     // Close the view and present the selected VC
+    /*
+    
     [self.viewDeckController closeRightViewBouncing:^(IIViewDeckController *controller) {
         if ([controller.centerController isKindOfClass:[UINavigationController class]]) {
             UITableViewController* cc = (UITableViewController*)((UINavigationController*)controller.centerController).topViewController;
@@ -199,11 +202,10 @@
         }
 //        [NSThread sleepForTimeInterval:(300+arc4random()%700)/1000000.0]; // mimic delay... not really necessary
     }];
+     */
 }
 
 - (void)viewDidUnload {
-    [self setDesignerCell:nil];
-    [self setMainCell:nil];
     [super viewDidUnload];
 }
 

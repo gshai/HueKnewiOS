@@ -23,19 +23,20 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {        
         
-        self.leftController = [[SRLeftViewController alloc] initWithNibName:@"SRLeftViewController" bundle:nil];
+        self.leftController = nil;//[[SRLeftViewController alloc] initWithNibName:@"SRLeftViewController" bundle:nil];
         self.rightController = nil;//[[SRRightViewController alloc] initWithNibName:@"SRRightViewController" bundle:nil];
         ViewController *mainController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
         _centerController = [[UINavigationController alloc] initWithRootViewController:mainController];
-        [_centerController.navigationController.navigationBar setHidden:YES];
         IIViewDeckController *deckController =  [[IIViewDeckController alloc] initWithCenterViewController: _centerController
                                                                                         leftViewController: _leftController
                                                                                        rightViewController: _rightController];
         deckController.rightSize = 20;
         deckController.leftSize  = 20;
 
+        [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerContained];
+        
         self.window.rootViewController = deckController;
         [self.window makeKeyAndVisible];
         

@@ -164,8 +164,11 @@
     NSDictionary *dict = [NSDictionary dictionaryWithDictionary:(NSDictionary *)json];
     NSLog(@"Processing JSON dict: %@", dict);
     
-    self.viewDeckController.rightController = [[SRRightViewController alloc] initWithNibName:@"SRRightViewController" bundle:nil andDictionary:dict];
-    [(SRRightViewController *)self.viewDeckController.rightController setPrimeColor:_colorView.backgroundColor];
+    SRRightViewController *vc = [[SRRightViewController alloc] initWithNibName:@"SRRightViewController" bundle:nil andDictionary:dict];
+    [vc setPrimeColor:_colorView.backgroundColor];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.viewDeckController.rightController = navController;
+    
 
 }
 

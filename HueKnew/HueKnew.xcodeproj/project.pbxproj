@@ -28,6 +28,8 @@
 		D8726E321729FDF000F5AD87 /* DesignerColorAnalyticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726E301729FDF000F5AD87 /* DesignerColorAnalyticsCell.xib */; };
 		D8726E36172A002D00F5AD87 /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = D8726E34172A002D00F5AD87 /* man.png */; };
 		D8726E37172A002D00F5AD87 /* woman.png in Resources */ = {isa = PBXBuildFile; fileRef = D8726E35172A002D00F5AD87 /* woman.png */; };
+		D8726E3B172A317600F5AD87 /* WishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726E39172A317200F5AD87 /* WishListViewController.m */; };
+		D8726E3C172A317600F5AD87 /* WishListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726E3A172A317300F5AD87 /* WishListViewController.xib */; };
 		D8FBC25A17209D1700562FCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25917209D1700562FCE /* UIKit.framework */; };
 		D8FBC25C17209D1700562FCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25B17209D1700562FCE /* Foundation.framework */; };
 		D8FBC25E17209D1700562FCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25D17209D1700562FCE /* CoreGraphics.framework */; };
@@ -91,6 +93,9 @@
 		D8726E301729FDF000F5AD87 /* DesignerColorAnalyticsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DesignerColorAnalyticsCell.xib; path = Classes/DesignerColorAnalyticsCell.xib; sourceTree = "<group>"; };
 		D8726E34172A002D00F5AD87 /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
 		D8726E35172A002D00F5AD87 /* woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woman.png; sourceTree = "<group>"; };
+		D8726E38172A317100F5AD87 /* WishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WishListViewController.h; path = Classes/WishListViewController.h; sourceTree = "<group>"; };
+		D8726E39172A317200F5AD87 /* WishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishListViewController.m; path = Classes/WishListViewController.m; sourceTree = "<group>"; };
+		D8726E3A172A317300F5AD87 /* WishListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WishListViewController.xib; path = Classes/WishListViewController.xib; sourceTree = "<group>"; };
 		D8FBC25517209D1700562FCE /* HueKnew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueKnew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FBC25917209D1700562FCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8FBC25B17209D1700562FCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -315,6 +320,9 @@
 			children = (
 				D8726E2217263A1900F5AD87 /* Cells */,
 				D8FBC2D51721F14C00562FCE /* OverlayViewController.h */,
+				D8726E38172A317100F5AD87 /* WishListViewController.h */,
+				D8726E39172A317200F5AD87 /* WishListViewController.m */,
+				D8726E3A172A317300F5AD87 /* WishListViewController.xib */,
 				D8FBC2D61721F14C00562FCE /* OverlayViewController.m */,
 				D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */,
 				D8726DF01723111800F5AD87 /* SRLeftViewController.xib */,
@@ -402,6 +410,7 @@
 				D8726E321729FDF000F5AD87 /* DesignerColorAnalyticsCell.xib in Resources */,
 				D8726E36172A002D00F5AD87 /* man.png in Resources */,
 				D8726E37172A002D00F5AD87 /* woman.png in Resources */,
+				D8726E3C172A317600F5AD87 /* WishListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +444,7 @@
 				D8726E111724DDB500F5AD87 /* MainColorAnalyticsCell.m in Sources */,
 				D8726E20172639FE00F5AD87 /* CityColorAnalyticsCell.m in Sources */,
 				D8726E311729FDF000F5AD87 /* DesignerColorAnalyticsCell.m in Sources */,
+				D8726E3B172A317600F5AD87 /* WishListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
