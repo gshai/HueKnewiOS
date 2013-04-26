@@ -24,6 +24,10 @@
 		D8726E1F172639FE00F5AD87 /* CityColorAnalyticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726E1C172639FC00F5AD87 /* CityColorAnalyticsCell.xib */; };
 		D8726E20172639FE00F5AD87 /* CityColorAnalyticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726E1D172639FD00F5AD87 /* CityColorAnalyticsCell.m */; };
 		D8726E2C1728ED6A00F5AD87 /* color.json in Resources */ = {isa = PBXBuildFile; fileRef = D8726E2B1728ED6A00F5AD87 /* color.json */; };
+		D8726E311729FDF000F5AD87 /* DesignerColorAnalyticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726E2E1729FDEE00F5AD87 /* DesignerColorAnalyticsCell.m */; };
+		D8726E321729FDF000F5AD87 /* DesignerColorAnalyticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726E301729FDF000F5AD87 /* DesignerColorAnalyticsCell.xib */; };
+		D8726E36172A002D00F5AD87 /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = D8726E34172A002D00F5AD87 /* man.png */; };
+		D8726E37172A002D00F5AD87 /* woman.png in Resources */ = {isa = PBXBuildFile; fileRef = D8726E35172A002D00F5AD87 /* woman.png */; };
 		D8FBC25A17209D1700562FCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25917209D1700562FCE /* UIKit.framework */; };
 		D8FBC25C17209D1700562FCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25B17209D1700562FCE /* Foundation.framework */; };
 		D8FBC25E17209D1700562FCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25D17209D1700562FCE /* CoreGraphics.framework */; };
@@ -82,6 +86,11 @@
 		D8726E1D172639FD00F5AD87 /* CityColorAnalyticsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityColorAnalyticsCell.m; path = Classes/CityColorAnalyticsCell.m; sourceTree = "<group>"; };
 		D8726E1E172639FD00F5AD87 /* CityColorAnalyticsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityColorAnalyticsCell.h; path = Classes/CityColorAnalyticsCell.h; sourceTree = "<group>"; };
 		D8726E2B1728ED6A00F5AD87 /* color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color.json; sourceTree = "<group>"; };
+		D8726E2E1729FDEE00F5AD87 /* DesignerColorAnalyticsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DesignerColorAnalyticsCell.m; path = Classes/DesignerColorAnalyticsCell.m; sourceTree = "<group>"; };
+		D8726E2F1729FDEE00F5AD87 /* DesignerColorAnalyticsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DesignerColorAnalyticsCell.h; path = Classes/DesignerColorAnalyticsCell.h; sourceTree = "<group>"; };
+		D8726E301729FDF000F5AD87 /* DesignerColorAnalyticsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DesignerColorAnalyticsCell.xib; path = Classes/DesignerColorAnalyticsCell.xib; sourceTree = "<group>"; };
+		D8726E34172A002D00F5AD87 /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
+		D8726E35172A002D00F5AD87 /* woman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woman.png; sourceTree = "<group>"; };
 		D8FBC25517209D1700562FCE /* HueKnew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueKnew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FBC25917209D1700562FCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8FBC25B17209D1700562FCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -173,8 +182,20 @@
 				D8726E1C172639FC00F5AD87 /* CityColorAnalyticsCell.xib */,
 				D8726E1D172639FD00F5AD87 /* CityColorAnalyticsCell.m */,
 				D8726E1E172639FD00F5AD87 /* CityColorAnalyticsCell.h */,
+				D8726E2E1729FDEE00F5AD87 /* DesignerColorAnalyticsCell.m */,
+				D8726E2F1729FDEE00F5AD87 /* DesignerColorAnalyticsCell.h */,
+				D8726E301729FDF000F5AD87 /* DesignerColorAnalyticsCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		D8726E33172A002C00F5AD87 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				D8726E34172A002D00F5AD87 /* man.png */,
+				D8726E35172A002D00F5AD87 /* woman.png */,
+			);
+			path = icons;
 			sourceTree = "<group>";
 		};
 		D8FBC24A17209D1600562FCE = {
@@ -280,6 +301,7 @@
 		D8FBC2B81720A86500562FCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8726E33172A002C00F5AD87 /* icons */,
 				D8726E0117242BED00F5AD87 /* hudElement.png */,
 				D8726DD41721FF3500F5AD87 /* tick.aiff */,
 				D8FBC2B91720A86500562FCE /* sample.png */,
@@ -377,6 +399,9 @@
 				D8726E0E1724DD7100F5AD87 /* MainColorAnalyticsCell.xib in Resources */,
 				D8726E1F172639FE00F5AD87 /* CityColorAnalyticsCell.xib in Resources */,
 				D8726E2C1728ED6A00F5AD87 /* color.json in Resources */,
+				D8726E321729FDF000F5AD87 /* DesignerColorAnalyticsCell.xib in Resources */,
+				D8726E36172A002D00F5AD87 /* man.png in Resources */,
+				D8726E37172A002D00F5AD87 /* woman.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +434,7 @@
 				D8726DFF1724268B00F5AD87 /* SRHUDViewController.m in Sources */,
 				D8726E111724DDB500F5AD87 /* MainColorAnalyticsCell.m in Sources */,
 				D8726E20172639FE00F5AD87 /* CityColorAnalyticsCell.m in Sources */,
+				D8726E311729FDF000F5AD87 /* DesignerColorAnalyticsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

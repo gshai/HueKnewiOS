@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "MainColorAnalyticsCell.h"
 #import "CityColorAnalyticsCell.h"
+#import "DesignerColorAnalyticsCell.h"
 
 @interface SRRightViewController ()
 
@@ -67,7 +68,7 @@
         default:            
             break;
     }
-    return 40.0;
+    return 90.0;
 }
 
 
@@ -75,6 +76,7 @@
 {
     static NSString *CellIdentifier = @"MainColorAnalyticsCell";
     
+    //TODO: all the cell properties are hard coded, need to make it smarter
     switch (indexPath.row) {
         case 0: {
             CellIdentifier = @"MainColorAnalyticsCell";
@@ -84,10 +86,7 @@
                 cell = [nib objectAtIndex:0];
             }
             [cell configureWithDictionary:[_configDict objectForKey:@"color_stats"]];
-//            cell.colorNameLabel.text = @"Camel";
-//            cell.rankingLabel.text = @"Rank 33%";
-//            cell.likesLabel.text = @"Liked 55 times";
-//            cell.yearLabel.text = @"2013";
+            cell.contentView.backgroundColor = _primeColor;
             return cell;
         }
             break;
@@ -98,16 +97,8 @@
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CityColorAnalyticsCell" owner:nil options:nil];
                 cell = [nib objectAtIndex:0];
             }
-            
-            // Set the cell's labels value
-            cell.precLabel1.text = [NSString stringWithFormat:@"%d%%", 33];
-            cell.precLabel2.text = [NSString stringWithFormat:@"%d%%", 33];
-            cell.precLabel3.text = [NSString stringWithFormat:@"%d%%", 33];
-            cell.cityLabel1.text = @"MIL";
-            cell.cityLabel2.text = @"NYC";
-            cell.cityLabel3.text = @"TLV";
-            
-            
+            [cell configureWithArray:[_configDict objectForKey:@"cities"]];
+                        
             cell.precLabel1.textColor = _primeColor;
             cell.precLabel2.textColor = _primeColor;
             cell.precLabel3.textColor = _primeColor;
@@ -117,15 +108,23 @@
             break;
 
         default: {
-            CellIdentifier = @"Cell";
+            CellIdentifier = @"DesignerColorAnalyticsCell";            
         }
             break;
     }
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CellIdentifier = @"DesignerColorAnalyticsCell";
+    DesignerColorAnalyticsCell *cell = (DesignerColorAnalyticsCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DesignerColorAnalyticsCell" owner:nil options:nil];
+        cell = [nib objectAtIndex:0];
     }
+    
+    int index = indexPath.row-2;
+    NSDictionary *dTemp = [[_configDict objectForKey:@"designers"] objectAtIndex:index];
+    [cell configureWithDictionary:dTemp];
+    cell.wView.backgroundColor = _primeColor;
+    cell.mView.backgroundColor = _primeColor;
 
     NSLog(@"created %@ cell", CellIdentifier);
     return cell;

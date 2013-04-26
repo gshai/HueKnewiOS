@@ -41,8 +41,8 @@
     _colorP3.text = [[subcolors[2] objectForKey:@"percent"] stringValue];
     
     NSString *rgb = [[config objectForKey:@"rgb"]stringByReplacingOccurrencesOfString:@" " withString:@""];
-    // TODO - fix the color convertor
-/*
+    //TODO - fix the color convertor
+
     float r = [[self findSubString:rgb btw:@"(" and:@","] floatValue];
     float g = [[self findSubString:rgb btw:@"," and:@","] floatValue];
     float b = [[self findSubString:rgb btw:@"," and:@")"] floatValue];
@@ -50,20 +50,20 @@
 
     UIColor *mainColor = [UIColor colorWithRed:r/255 green:g/255 blue:b/255 alpha:1];    
     self.contentView.backgroundColor = mainColor;
-*/    
+   
     return isValid;
 }
 
 - (NSString *)findSubString:(NSString *)myString btw:(NSString *)sub1 and:(NSString*)sub2 {
     
     int firstMatch = [myString rangeOfString:sub1].location;
-    int secondMatch = [myString rangeOfString:sub2 options:0 range:NSMakeRange(firstMatch , [myString length] - firstMatch - 1)].location;
+    int secondMatch = [myString rangeOfString:sub2 options:0 range:NSMakeRange(firstMatch+1 , [myString length] - firstMatch - 1)].location;
     
-    NSRange range = NSMakeRange(firstMatch+1, secondMatch-firstMatch);
+    NSRange range = NSMakeRange(firstMatch+1, secondMatch-firstMatch-1);
     NSString *str = [myString substringWithRange:range];
     
     myString = [myString substringFromIndex:secondMatch];
-    NSLog(@"return: %@ short to : %@", str, myString);
+    NSLog(@"return: str %@ short to : %@", str, myString);
     
     return str;
 }

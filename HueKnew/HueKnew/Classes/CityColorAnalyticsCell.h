@@ -18,6 +18,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *cityLabel2;
 @property (strong, nonatomic) IBOutlet UILabel *cityLabel3;
 
-
+- (BOOL)configureWithArray:(NSArray *)config;
 
 @end

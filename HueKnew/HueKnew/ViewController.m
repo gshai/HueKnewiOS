@@ -120,7 +120,7 @@
     
 
     // Create url and request
-    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://www.hue-knew.appspot.com/api/request/color;key=monsieurgiladshai;col=%d", javaRGB]];
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://www.hue-knew.appspot.com/api/request/color;key=monsieurgiladshai;col=rgb(%d,%d,%d)", (int)r, (int)g, (int)b]];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     // Make request
