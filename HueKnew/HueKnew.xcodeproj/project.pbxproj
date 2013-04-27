@@ -10,6 +10,7 @@
 		D858060E172B7EC300A2100E /* mag.png in Resources */ = {isa = PBXBuildFile; fileRef = D858060D172B7EC300A2100E /* mag.png */; };
 		D8580622172B9A2400A2100E /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D858061F172B9A2400A2100E /* CaptureSessionManager.m */; };
 		D8580624172B9D8300A2100E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8580623172B9D8300A2100E /* AVFoundation.framework */; };
+		D8580630172C41F100A2100E /* Eurostile LT Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D858062F172C41F100A2100E /* Eurostile LT Demi.ttf */; };
 		D8726DD51721FF3500F5AD87 /* tick.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D8726DD41721FF3500F5AD87 /* tick.aiff */; };
 		D8726DED17230E8A00F5AD87 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DE817230E8A00F5AD87 /* IISideController.m */; };
 		D8726DEE17230E8A00F5AD87 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DEA17230E8A00F5AD87 /* IIViewDeckController.m */; };
@@ -69,6 +70,7 @@
 		D858061E172B9A2400A2100E /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		D858061F172B9A2400A2100E /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		D8580623172B9D8300A2100E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D858062F172C41F100A2100E /* Eurostile LT Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eurostile LT Demi.ttf"; sourceTree = "<group>"; };
 		D8726DD41721FF3500F5AD87 /* tick.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = tick.aiff; sourceTree = "<group>"; };
 		D8726DE717230E8A00F5AD87 /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
 		D8726DE817230E8A00F5AD87 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 		D8FBC2B81720A86500562FCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D858062F172C41F100A2100E /* Eurostile LT Demi.ttf */,
 				D858060D172B7EC300A2100E /* mag.png */,
 				D8726E33172A002C00F5AD87 /* icons */,
 				D8726E0117242BED00F5AD87 /* hudElement.png */,
@@ -446,6 +449,7 @@
 				D8726E37172A002D00F5AD87 /* woman.png in Resources */,
 				D8726E3C172A317600F5AD87 /* WishListViewController.xib in Resources */,
 				D858060E172B7EC300A2100E /* mag.png in Resources */,
+				D8580630172C41F100A2100E /* Eurostile LT Demi.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,7 +39,7 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-
+    NSLog(@"drawRect");
     
     /*
         // Magnify the view
