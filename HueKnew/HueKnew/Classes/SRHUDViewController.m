@@ -21,7 +21,7 @@
     
 //    self = [[[NSBundle mainBundle] loadNibNamed:@"SRHUDViewController" owner:self options:nil] objectAtIndex:0];
     if (self) {
-        _colorView.backgroundColor = color;
+        _localColor = color;
         isAnimating = NO;
         _titleLabel.font = [UIFont fontWithName:@"Eurostile LT Demi.ttf" size:23];
     }
@@ -34,6 +34,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [_colorView setBackgroundColor:_localColor];
 }
 
 - (void)didReceiveMemoryWarning

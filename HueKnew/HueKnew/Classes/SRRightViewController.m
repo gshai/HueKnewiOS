@@ -87,7 +87,7 @@
                 cell = [nib objectAtIndex:0];
             }
             [cell configureWithDictionary:[_configDict objectForKey:@"color_stats"]];
-            cell.contentView.backgroundColor = _primeColor;
+//            cell.contentView.backgroundColor = _primeColor;
             return cell;
         }
             break;

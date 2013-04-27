@@ -25,6 +25,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Eurostile LT Demi.ttf</string>
+		<string>Eurostile LT Bold.ttf</string>
+		<string>Eurostile LT Medium.ttf</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

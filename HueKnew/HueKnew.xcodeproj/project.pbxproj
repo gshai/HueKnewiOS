@@ -34,6 +34,9 @@
 		D8726E37172A002D00F5AD87 /* woman.png in Resources */ = {isa = PBXBuildFile; fileRef = D8726E35172A002D00F5AD87 /* woman.png */; };
 		D8726E3B172A317600F5AD87 /* WishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726E39172A317200F5AD87 /* WishListViewController.m */; };
 		D8726E3C172A317600F5AD87 /* WishListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8726E3A172A317300F5AD87 /* WishListViewController.xib */; };
+		D89EA54C172C5D1A00A2FF9C /* Eurostile LT Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D89EA54B172C5D1A00A2FF9C /* Eurostile LT Bold.ttf */; };
+		D89EA54F172C5FF400A2FF9C /* CIRCLE_WITH_BASE.png in Resources */ = {isa = PBXBuildFile; fileRef = D89EA54E172C5FF400A2FF9C /* CIRCLE_WITH_BASE.png */; };
+		D89EA551172C646900A2FF9C /* Eurostile LT Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D89EA550172C646900A2FF9C /* Eurostile LT Medium.ttf */; };
 		D8FBC25A17209D1700562FCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25917209D1700562FCE /* UIKit.framework */; };
 		D8FBC25C17209D1700562FCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25B17209D1700562FCE /* Foundation.framework */; };
 		D8FBC25E17209D1700562FCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC25D17209D1700562FCE /* CoreGraphics.framework */; };
@@ -105,6 +108,9 @@
 		D8726E39172A317200F5AD87 /* WishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishListViewController.m; path = Classes/WishListViewController.m; sourceTree = "<group>"; };
 		D8726E3A172A317300F5AD87 /* WishListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WishListViewController.xib; path = Classes/WishListViewController.xib; sourceTree = "<group>"; };
 		D8726E44172B726800F5AD87 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Resources/Constants.h; sourceTree = SOURCE_ROOT; };
+		D89EA54B172C5D1A00A2FF9C /* Eurostile LT Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eurostile LT Bold.ttf"; sourceTree = "<group>"; };
+		D89EA54E172C5FF400A2FF9C /* CIRCLE_WITH_BASE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIRCLE_WITH_BASE.png; sourceTree = "<group>"; };
+		D89EA550172C646900A2FF9C /* Eurostile LT Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eurostile LT Medium.ttf"; sourceTree = "<group>"; };
 		D8FBC25517209D1700562FCE /* HueKnew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueKnew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FBC25917209D1700562FCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8FBC25B17209D1700562FCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -359,9 +365,12 @@
 			isa = PBXGroup;
 			children = (
 				D858062F172C41F100A2100E /* Eurostile LT Demi.ttf */,
+				D89EA54B172C5D1A00A2FF9C /* Eurostile LT Bold.ttf */,
+				D89EA550172C646900A2FF9C /* Eurostile LT Medium.ttf */,
 				D858060D172B7EC300A2100E /* mag.png */,
 				D8726E33172A002C00F5AD87 /* icons */,
 				D8726E0117242BED00F5AD87 /* hudElement.png */,
+				D89EA54E172C5FF400A2FF9C /* CIRCLE_WITH_BASE.png */,
 				D8726DD41721FF3500F5AD87 /* tick.aiff */,
 				D8726E2B1728ED6A00F5AD87 /* color.json */,
 			);
@@ -450,6 +459,9 @@
 				D8726E3C172A317600F5AD87 /* WishListViewController.xib in Resources */,
 				D858060E172B7EC300A2100E /* mag.png in Resources */,
 				D8580630172C41F100A2100E /* Eurostile LT Demi.ttf in Resources */,
+				D89EA54C172C5D1A00A2FF9C /* Eurostile LT Bold.ttf in Resources */,
+				D89EA54F172C5FF400A2FF9C /* CIRCLE_WITH_BASE.png in Resources */,
+				D89EA551172C646900A2FF9C /* Eurostile LT Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

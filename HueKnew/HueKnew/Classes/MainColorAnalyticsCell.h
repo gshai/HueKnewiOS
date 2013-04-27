@@ -16,10 +16,10 @@
 
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *colorNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rankingLabel;
-@property (weak, nonatomic) IBOutlet UILabel *likesLabel;
-@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
+@property (strong, nonatomic) IBOutlet UILabel *colorNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *rankingLabel;
+@property (strong, nonatomic) IBOutlet UILabel *likesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *yearLabel;
 @property (strong, nonatomic) IBOutlet UILabel *colorP0;
 @property (strong, nonatomic) IBOutlet UILabel *colorP1;
 @property (strong, nonatomic) IBOutlet UILabel *colorP2;
