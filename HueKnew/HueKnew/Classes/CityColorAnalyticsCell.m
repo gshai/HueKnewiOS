@@ -31,9 +31,9 @@
     BOOL isValid = YES;
     NSLog(@"setting Citys cell with : %@", config);
     
-    _precLabel1.text = [[config[0] objectForKey:@"percent"] stringValue];
-    _precLabel2.text = [[config[1] objectForKey:@"percent"] stringValue];
-    _precLabel3.text = [[config[2] objectForKey:@"percent"] stringValue];
+    _precLabel1.text = [NSString stringWithFormat:@"%@%%",[[config[0] objectForKey:@"percent"] stringValue]];
+    _precLabel2.text = [NSString stringWithFormat:@"%@%%",[[config[1] objectForKey:@"percent"] stringValue]];
+    _precLabel3.text = [NSString stringWithFormat:@"%@%%",[[config[2] objectForKey:@"percent"] stringValue]];
     _cityLabel1.text = [config[0] objectForKey:@"name"];
     _cityLabel2.text = [config[1] objectForKey:@"name"];
     _cityLabel3.text = [config[2] objectForKey:@"name"];
