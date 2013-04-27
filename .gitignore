@@ -1,4 +1,3 @@
-_Store
 */build/*
 *.pbxuser
 !default.pbxuser
@@ -34,3 +33,4 @@ build/*
 *.pbxuser
 *.xcworkspace
 xcuserdata
+.DS_Store
