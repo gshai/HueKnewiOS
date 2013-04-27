@@ -23,6 +23,7 @@
     if (self) {
         _colorView.backgroundColor = color;
         isAnimating = NO;
+        _titleLabel.font = [UIFont fontWithName:@"Eurostile LT Demi.ttf" size:23];
     }
     return self;
 
@@ -45,6 +46,7 @@
     [self setColorView:nil];
     [self setAnimationCapsule:nil];
     [self setCounterLabel:nil];
+    [self setTitleLabel:nil];
     [super viewDidUnload];
 }
 

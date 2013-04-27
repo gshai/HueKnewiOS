@@ -118,12 +118,18 @@
     [self.view sendSubviewToBack:_videoView];
 }
 
+- (void)stopVideo {
+    [[_captureManager captureSession] stopRunning];
+    [_timer invalidate];
+    _timer = nil;
+}
+
 
 #pragma mark - Actions
 
 - (IBAction)photoLibraryAction:(id)sender {
     imageState = IMAGE;
-    [[_captureManager captureSession] stopRunning];
+    [self stopVideo];
     [self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
 //    _sendColorBtn.enabled = NO;
 }
@@ -323,6 +329,7 @@
                                              repeats:NO];
     [_mag setNeedsDisplay];
 }
+
 
 #pragma mark - Magnifier Protocol
 

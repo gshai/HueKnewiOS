@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UIView *colorView;
 @property (strong, nonatomic) IBOutlet UIView *animationCapsule;
 @property (strong, nonatomic) IBOutlet UILabel *counterLabel;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
 - (id)initWithColor:(UIColor *)color;
 - (void)startAnimatingView;
