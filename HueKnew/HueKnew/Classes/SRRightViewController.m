@@ -109,7 +109,7 @@
             break;
 
         default: {
-            CellIdentifier = @"DesignerColorAnalyticsCell";            
+            CellIdentifier = @"DesignerColorAnalyticsCell";
         }
             break;
     }
@@ -140,7 +140,6 @@
 {
     // Deselect the row
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     
     switch (indexPath.row) {
         case 0: {
