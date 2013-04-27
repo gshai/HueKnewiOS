@@ -40,19 +40,26 @@
 
 - (void)drawRect:(CGRect)rect {
 
-    // Magnify the view
+    
+    /*
+        // Magnify the view
 	CGContextRef context = UIGraphicsGetCurrentContext();
-	CGContextTranslateCTM(context,1*(self.frame.size.width*0.5),1*(self.frame.size.height*0.5));
+	CGContextTranslateCTM(context, 1*(self.frame.size.width*0.5), 1*(self.frame.size.height*0.5));
 	CGContextScaleCTM(context, 3, 3);
-	CGContextTranslateCTM(context,-1*(_touchPoint.x),-1*(_touchPoint.y));
-	[self.viewToMagnify.layer renderInContext:context];
+	CGContextTranslateCTM(context, -1*(_touchPoint.x), -1*(_touchPoint.y));
+	[_layerToMagnify renderInContext:context];
+    */
     
-    // get color in the middle of the magnifier
-    UIColor *color = [self colorOfPoint:CGPointMake(rect.size.width/2, rect.size.height/2)];
+        // get color in the middle of the magnifier
+    UIColor *color = [self colorOfPoint: _touchPoint]; // CGPointMake(rect.size.width/2, rect.size.height/2)];
     
+        // call the delegate
     if ([_delegate respondsToSelector:@selector(updateWithColor:)]) {
         [_delegate updateWithColor:color];
     }
+    
+        // render the color in place
+    [self setBackgroundColor:color];
 }
 
 - (UIColor *) colorOfPoint:(CGPoint)point
@@ -63,7 +70,7 @@
     
     CGContextTranslateCTM(context, -point.x, -point.y);
     
-    [self.layer renderInContext:context];
+    [_layerToMagnify renderInContext:context];
     
     CGContextRelease(context);
     CGColorSpaceRelease(colorSpace);
@@ -80,7 +87,10 @@
 - (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer
 {
     NSLog(@"magnifier - tapDetected");
-    
+    if ([_delegate respondsToSelector:@selector(eventWithColor:)]) {
+        [_delegate eventWithColor:self.backgroundColor];
+    }
+
  
 }
 

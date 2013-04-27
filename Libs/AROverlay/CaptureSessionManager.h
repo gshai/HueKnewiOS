@@ -1,3 +1,4 @@
+
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -6,8 +7,8 @@
 
 }
 
-@property (retain) AVCaptureVideoPreviewLayer *previewLayer;
-@property (retain) AVCaptureSession *captureSession;
+@property (strong) AVCaptureVideoPreviewLayer *previewLayer;
+@property (strong) AVCaptureSession *captureSession;
 
 - (void)addVideoPreviewLayer;
 - (void)addVideoInput;

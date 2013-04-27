@@ -19,12 +19,20 @@ typedef enum {
     HASANALYTICS,
 } APPSTATE;
 
+typedef enum {
+    VIDEO,
+    IMAGE,
+
+} IMAGESTATE;
+
+
 @interface ViewController : UIViewController
 <UIGestureRecognizerDelegate,
 ColorOfPoint,
 UIImagePickerControllerDelegate,
 OverlayViewControllerDelegate> {
     APPSTATE appState;
+    IMAGESTATE imageState;
 }
 
 @property (strong, nonatomic) OverlayViewController *overlayViewController;
@@ -39,14 +47,19 @@ OverlayViewControllerDelegate> {
 @property (strong, nonatomic) IBOutlet UIButton *albumsBtn;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) IBOutlet UIView *panningView;
+@property (strong, nonatomic) IBOutlet UIView *videoView;
+
 @property (strong, nonatomic) SRHUDViewController *hud;
-
-
+@property (strong, nonatomic) NSTimer *timer;
+@property (strong) CaptureSessionManager *captureManager;
 
 - (IBAction)photoLibraryAction:(id)sender;
 - (IBAction)cameraAction:(id)sender;
 
 - (IBAction)sendColor:(id)sender;
 - (void)sendColorToHK:(UIColor *)color;
+
+// Magnifier
 - (void)updateWithColor:(UIColor *)color;
+- (void)eventWithColor:(UIColor *)color;
 @end

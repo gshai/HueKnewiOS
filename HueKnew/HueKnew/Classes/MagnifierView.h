@@ -10,6 +10,7 @@
 
 @protocol ColorOfPoint <NSObject>
 - (void)updateWithColor:(UIColor *)color;
+- (void)eventWithColor:(UIColor *)color;
 @end
 
 
@@ -17,8 +18,9 @@
 <UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong)   UIView  *viewToMagnify;
+@property (nonatomic, strong)   CALayer  *layerToMagnify;
 @property (nonatomic, strong)   NSObject<ColorOfPoint> *delegate;
-@property (assign, nonatomic)              CGPoint touchPoint;
+@property (assign, nonatomic)   CGPoint touchPoint;
 
 
 @end

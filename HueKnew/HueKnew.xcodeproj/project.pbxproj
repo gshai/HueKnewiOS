@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D858060E172B7EC300A2100E /* mag.png in Resources */ = {isa = PBXBuildFile; fileRef = D858060D172B7EC300A2100E /* mag.png */; };
-		D8580620172B9A2400A2100E /* AROverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D858061C172B9A2400A2100E /* AROverlayViewController.m */; };
-		D8580621172B9A2400A2100E /* AROverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D858061D172B9A2400A2100E /* AROverlayViewController.xib */; };
 		D8580622172B9A2400A2100E /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D858061F172B9A2400A2100E /* CaptureSessionManager.m */; };
+		D8580624172B9D8300A2100E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8580623172B9D8300A2100E /* AVFoundation.framework */; };
 		D8726DD51721FF3500F5AD87 /* tick.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D8726DD41721FF3500F5AD87 /* tick.aiff */; };
 		D8726DED17230E8A00F5AD87 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DE817230E8A00F5AD87 /* IISideController.m */; };
 		D8726DEE17230E8A00F5AD87 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DEA17230E8A00F5AD87 /* IIViewDeckController.m */; };
@@ -67,11 +66,9 @@
 
 /* Begin PBXFileReference section */
 		D858060D172B7EC300A2100E /* mag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mag.png; sourceTree = "<group>"; };
-		D858061B172B9A2400A2100E /* AROverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AROverlayViewController.h; sourceTree = "<group>"; };
-		D858061C172B9A2400A2100E /* AROverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AROverlayViewController.m; sourceTree = "<group>"; };
-		D858061D172B9A2400A2100E /* AROverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AROverlayViewController.xib; sourceTree = "<group>"; };
 		D858061E172B9A2400A2100E /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		D858061F172B9A2400A2100E /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
+		D8580623172B9D8300A2100E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D8726DD41721FF3500F5AD87 /* tick.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = tick.aiff; sourceTree = "<group>"; };
 		D8726DE717230E8A00F5AD87 /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
 		D8726DE817230E8A00F5AD87 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
@@ -159,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8580624172B9D8300A2100E /* AVFoundation.framework in Frameworks */,
 				D8726DFB1723177D00F5AD87 /* QuartzCore.framework in Frameworks */,
 				D8FBC2DC1721F43D00562FCE /* AudioToolbox.framework in Frameworks */,
 				D8FBC2B317209EDF00562FCE /* MobileCoreServices.framework in Frameworks */,
@@ -177,9 +175,6 @@
 		D858061A172B9A2400A2100E /* AROverlay */ = {
 			isa = PBXGroup;
 			children = (
-				D858061B172B9A2400A2100E /* AROverlayViewController.h */,
-				D858061C172B9A2400A2100E /* AROverlayViewController.m */,
-				D858061D172B9A2400A2100E /* AROverlayViewController.xib */,
 				D858061E172B9A2400A2100E /* CaptureSessionManager.h */,
 				D858061F172B9A2400A2100E /* CaptureSessionManager.m */,
 			);
@@ -258,6 +253,7 @@
 		D8FBC24A17209D1600562FCE = {
 			isa = PBXGroup;
 			children = (
+				D8580623172B9D8300A2100E /* AVFoundation.framework */,
 				D8726DFA1723177D00F5AD87 /* QuartzCore.framework */,
 				D8FBC2DB1721F43D00562FCE /* AudioToolbox.framework */,
 				D8FBC2B81720A86500562FCE /* Resources */,
@@ -450,7 +446,6 @@
 				D8726E37172A002D00F5AD87 /* woman.png in Resources */,
 				D8726E3C172A317600F5AD87 /* WishListViewController.xib in Resources */,
 				D858060E172B7EC300A2100E /* mag.png in Resources */,
-				D8580621172B9A2400A2100E /* AROverlayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +480,6 @@
 				D8726E20172639FE00F5AD87 /* CityColorAnalyticsCell.m in Sources */,
 				D8726E311729FDF000F5AD87 /* DesignerColorAnalyticsCell.m in Sources */,
 				D8726E3B172A317600F5AD87 /* WishListViewController.m in Sources */,
-				D8580620172B9A2400A2100E /* AROverlayViewController.m in Sources */,
 				D8580622172B9A2400A2100E /* CaptureSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

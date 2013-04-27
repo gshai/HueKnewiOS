@@ -3,8 +3,6 @@
 
 @implementation CaptureSessionManager
 
-@synthesize captureSession;
-@synthesize previewLayer;
 
 #pragma mark Capture Session Configuration
 
@@ -16,8 +14,8 @@
 }
 
 - (void)addVideoPreviewLayer {
-	[self setPreviewLayer:[[[AVCaptureVideoPreviewLayer alloc] initWithSession:[self captureSession]] autorelease]];
-	[[self previewLayer] setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+	_previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_captureSession];
+	[_previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
   
 }
 
@@ -27,8 +25,8 @@
 		NSError *error;
 		AVCaptureDeviceInput *videoIn = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:&error];
 		if (!error) {
-			if ([[self captureSession] canAddInput:videoIn])
-				[[self captureSession] addInput:videoIn];
+			if ([_captureSession canAddInput:videoIn])
+				[_captureSession addInput:videoIn];
 			else
 				NSLog(@"Couldn't add video input");		
 		}
@@ -41,12 +39,11 @@
 
 - (void)dealloc {
 
-	[[self captureSession] stopRunning];
+	[_captureSession stopRunning];
 
-	[previewLayer release], previewLayer = nil;
-	[captureSession release], captureSession = nil;
+	_previewLayer = nil;
+	_captureSession = nil;
 
-	[super dealloc];
 }
 
 @end
