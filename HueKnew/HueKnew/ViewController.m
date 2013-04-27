@@ -23,17 +23,21 @@
 {
     [super viewDidLoad];
     
+        // set initial state
     appState = START;
+    imageState = VIDEO;
     _mag = nil;
     
 	// Do any additional setup after loading the view, typically from a nib.
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
     tapRecognizer.numberOfTapsRequired = 1;
     tapRecognizer.delegate = self;
+//    [_videoView addGestureRecognizer:tapRecognizer];
     [_imageView addGestureRecognizer:tapRecognizer];
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
     pan.delegate = self;
+//    [_videoView addGestureRecognizer:pan];
     [_imageView addGestureRecognizer:pan];
     
     self.overlayViewController =
@@ -61,13 +65,21 @@
 - (void)viewDidAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
     
+        // Create video session
+    if (imageState == VIDEO) {
+        [self setupCaptureManager];
+    } else {
+        [self setupImageView];
+    }
+    
     [self createMagnifierWithPoint:self.view.center];
     [self.view addSubview:_mag];
     [self.view bringSubviewToFront:_mag];
-
+    
+    
     // Slide in the btn tray
     if (appState == START) {
-        [self cameraAction:nil];
+//        [self cameraAction:nil];
         [self slideInPicBtns];
     }
 }
@@ -77,19 +89,52 @@
     [self setPanningView:nil];
     [self setPicBtnsTrayView:nil];
     [self setColorTrayView:nil];
+    [self setVideoView:nil];
     [super viewDidUnload];
 }
+
+#pragma mark - Capture Manager
+
+- (void)setupCaptureManager {
+    
+    _captureManager = [[CaptureSessionManager alloc] init];
+    
+	[_captureManager addVideoInput];    
+	[_captureManager addVideoPreviewLayer];
+    
+	CGRect layerRect = [[_videoView layer] bounds];
+	[[_captureManager previewLayer] setBounds:layerRect];
+	[[_captureManager previewLayer] setPosition:CGPointMake(CGRectGetMidX(layerRect),
+                                                                  CGRectGetMidY(layerRect))];
+	[[_videoView layer] addSublayer:[_captureManager previewLayer]];
+    
+    
+	[[_captureManager captureSession] startRunning];
+    
+    [self.view sendSubviewToBack:_imageView];
+}
+
+- (void)setupImageView {
+    [self.view sendSubviewToBack:_videoView];
+}
+
 
 #pragma mark - Actions
 
 - (IBAction)photoLibraryAction:(id)sender {
+    imageState = IMAGE;
+    [[_captureManager captureSession] stopRunning];
     [self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
-    _sendColorBtn.enabled = NO;
+//    _sendColorBtn.enabled = NO;
 }
 
 - (IBAction)cameraAction:(id)sender {
-    [self showImagePicker:UIImagePickerControllerSourceTypeCamera];
-    _sendColorBtn.enabled = NO;
+    imageState = VIDEO;
+    [self.view sendSubviewToBack:_imageView];
+    [[_captureManager captureSession] startRunning];
+    
+//    [self showImagePicker:UIImagePickerControllerSourceTypeCamera];
+//    _sendColorBtn.enabled = NO;
 }
 
 - (IBAction)sendColor:(id)sender {
@@ -230,18 +275,54 @@
 
 
 #pragma mark - Magnifier
+
 - (void)createMagnifierWithPoint:(CGPoint)point {
     if (nil != _mag) {
+        switch (imageState) {
+            case VIDEO:
+                _mag.layerToMagnify = _captureManager.previewLayer;
+                break;
+            case IMAGE:
+                _mag.layerToMagnify = _imageView.layer;
+                break;
+                
+            default:
+                break;
+        }
         return;
     }
     
-    NSLog(@"create mag");
     _mag = [[MagnifierView alloc] init];
-    _mag.viewToMagnify = _imageView;
+    
+    switch (imageState) {
+        case VIDEO:
+            _mag.layerToMagnify = _captureManager.previewLayer;
+            [self sampleVideo];
+            break;
+        case IMAGE:
+            _mag.layerToMagnify = _imageView.layer;
+            break;
+            
+        default:
+            break;
+    }
+    
     _mag.delegate = self;
     _mag.touchPoint = point;
 }
 
+- (void)sampleVideo {
+    NSLog(@"sampleVideo");
+    [_timer invalidate];
+    _timer = nil;
+    
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                             target:self
+                                            selector:@selector(sampleVideo)
+                                           userInfo:nil
+                                             repeats:NO];
+    [_mag setNeedsDisplay];
+}
 
 #pragma mark - Magnifier Protocol
 
@@ -249,7 +330,10 @@
     NSLog(@"update color: %@", color);
     [_colorView setBackgroundColor:color];
 }
-
+- (void)eventWithColor:(UIColor *)color {
+    NSLog(@"mag sent a tap with color: %@", color);
+    [self sendColorToHK:color];
+}
 
 #pragma mark - Overlay Protocol
 
@@ -278,9 +362,11 @@
     
     // update state
     appState = IMAGEINVIEW;
+    imageState = IMAGE;
     
     // update image
-    [_imageView setImage:picture];
+    [self.view sendSubviewToBack:_videoView];
+    [_imageView setImage:picture];    
     
     // set view
     [self slideOutPicBtns];
