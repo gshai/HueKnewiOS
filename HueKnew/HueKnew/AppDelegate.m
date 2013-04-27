@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Constants.h"
 #import "IIViewDeckController.h"
 #import "ViewController.h"
 #import "SRLeftViewController.h"
@@ -32,8 +32,8 @@
         IIViewDeckController *deckController =  [[IIViewDeckController alloc] initWithCenterViewController: _centerController
                                                                                         leftViewController: _leftController
                                                                                        rightViewController: _rightController];
-        deckController.rightSize = 20;
-        deckController.leftSize  = 20;
+        deckController.rightSize = Right_Padding;
+        deckController.leftSize  = Right_Padding;
 
         [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerContained];
         

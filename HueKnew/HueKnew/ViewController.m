@@ -44,7 +44,7 @@
 
     // prevent panning of the view
     self.viewDeckController.panningView = _panningView;
-    self.viewDeckController.panningMode = IIViewDeckPanningViewPanning;//IIViewDeckNoPanning;
+    self.viewDeckController.panningMode = IIViewDeckPanningViewPanning;
     
     // place btn tray out side of view
     _picBtnsTrayView.frame = CGRectMake(0, self.view.frame.size.height, _picBtnsTrayView.frame.size.width, _picBtnsTrayView.frame.size.height);
@@ -61,8 +61,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
     
+    [self createMagnifierWithPoint:self.view.center];
+    [self.view addSubview:_mag];
+    [self.view bringSubviewToFront:_mag];
+
     // Slide in the btn tray
     if (appState == START) {
+        [self cameraAction:nil];
         [self slideInPicBtns];
     }
 }
@@ -128,6 +133,7 @@
         appState = HASANALYTICS;
         [self updateVCsWithData:json];
         [self stopActiveDisplay];
+        [self slideCenterToRight];
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
@@ -172,7 +178,7 @@
 
 }
 
-#pragma mark Animations
+#pragma mark - Animations
 - (void)slideInPicBtns {
     [UIView animateWithDuration:0.5 animations:^{
         _picBtnsTrayView.hidden = NO;
@@ -199,7 +205,13 @@
         _colorTrayView.hidden = YES;
     }];
 }
-
+- (void)slideCenterToRight {
+    NSLog(@"slide center to right");
+    [self.viewDeckController openRightViewBouncing:^(IIViewDeckController *controller) {
+        if ([controller.centerController isKindOfClass:[UINavigationController class]]) {            
+        }
+    }];
+}
 
 #pragma mark - Photo Library
 
@@ -234,6 +246,7 @@
 #pragma mark - Magnifier Protocol
 
 - (void)updateWithColor:(UIColor *)color {
+    NSLog(@"update color: %@", color);
     [_colorView setBackgroundColor:color];
 }
 
@@ -252,6 +265,8 @@
 
 - (void)didFinishWithPicker {
     NSLog(@"didFinishWithPicker - dismiss it");
+    
+    appState = IMAGEINVIEW;
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -324,7 +339,6 @@
         }
             break;
         case UIGestureRecognizerStateChanged: {            
-//            NSLog(@"dragging x:%f y: %f", point.x, point.y);
             _mag.touchPoint = point;
             [_mag setNeedsDisplay];
         }

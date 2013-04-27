@@ -73,6 +73,8 @@
     NSLog(@"duration: %f for offset: x: %f", duration, x);
     
     [UIView animateWithDuration:duration
+                          delay:0.0
+                        options:UIViewAnimationCurveLinear
                      animations:^{
                          element.center = CGPointMake(_animationCapsule.frame.size.width+element.frame.size.width/2, element.center.y);
                      }
@@ -80,7 +82,6 @@
                          [element removeFromSuperview];
                          UIImageView *element2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hudElement.png"]];
                          if (isAnimating) {
-//                             NSLog(@"addElement at offset: %f", x);
                              [self addElement:element2 atOffset:-0.5*element.frame.size.width];
                          }     
                      }

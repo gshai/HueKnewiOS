@@ -11,6 +11,7 @@
 #import <AudioToolbox/AudioServices.h>
 #import "OverlayViewController.h"
 #import "SRHUDViewController.h"
+#import "CaptureSessionManager.h"
 
 typedef enum {
     START,

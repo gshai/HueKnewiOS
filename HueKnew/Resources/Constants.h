@@ -1,3 +1,4 @@
+
 //
 //  Header.h
 //  HueKnew
@@ -6,9 +7,4 @@
 //  Copyright (c) 2013 Shai, Gilad. All rights reserved.
 //
 
-#ifndef HueKnew_Header_h
-#define HueKnew_Header_h
-
-
-
-#endif
+#define Right_Padding 20.0

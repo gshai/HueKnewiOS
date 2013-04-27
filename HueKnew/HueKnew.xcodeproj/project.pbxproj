@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D858060E172B7EC300A2100E /* mag.png in Resources */ = {isa = PBXBuildFile; fileRef = D858060D172B7EC300A2100E /* mag.png */; };
+		D8580620172B9A2400A2100E /* AROverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D858061C172B9A2400A2100E /* AROverlayViewController.m */; };
+		D8580621172B9A2400A2100E /* AROverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D858061D172B9A2400A2100E /* AROverlayViewController.xib */; };
+		D8580622172B9A2400A2100E /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D858061F172B9A2400A2100E /* CaptureSessionManager.m */; };
 		D8726DD51721FF3500F5AD87 /* tick.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D8726DD41721FF3500F5AD87 /* tick.aiff */; };
 		D8726DED17230E8A00F5AD87 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DE817230E8A00F5AD87 /* IISideController.m */; };
 		D8726DEE17230E8A00F5AD87 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8726DEA17230E8A00F5AD87 /* IIViewDeckController.m */; };
@@ -55,7 +59,6 @@
 		D8FBC2AF17209ED200562FCE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2AE17209ED200562FCE /* Security.framework */; };
 		D8FBC2B117209ED800562FCE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2B017209ED800562FCE /* SystemConfiguration.framework */; };
 		D8FBC2B317209EDF00562FCE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2B217209EDF00562FCE /* MobileCoreServices.framework */; };
-		D8FBC2BA1720A86500562FCE /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FBC2B91720A86500562FCE /* sample.png */; };
 		D8FBC2BD1720B1DD00562FCE /* MagnifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */; };
 		D8FBC2D81721F14C00562FCE /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FBC2D61721F14C00562FCE /* OverlayViewController.m */; };
 		D8FBC2D91721F14C00562FCE /* OverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */; };
@@ -63,6 +66,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D858060D172B7EC300A2100E /* mag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mag.png; sourceTree = "<group>"; };
+		D858061B172B9A2400A2100E /* AROverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AROverlayViewController.h; sourceTree = "<group>"; };
+		D858061C172B9A2400A2100E /* AROverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AROverlayViewController.m; sourceTree = "<group>"; };
+		D858061D172B9A2400A2100E /* AROverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AROverlayViewController.xib; sourceTree = "<group>"; };
+		D858061E172B9A2400A2100E /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
+		D858061F172B9A2400A2100E /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		D8726DD41721FF3500F5AD87 /* tick.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = tick.aiff; sourceTree = "<group>"; };
 		D8726DE717230E8A00F5AD87 /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
 		D8726DE817230E8A00F5AD87 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
@@ -96,6 +105,7 @@
 		D8726E38172A317100F5AD87 /* WishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WishListViewController.h; path = Classes/WishListViewController.h; sourceTree = "<group>"; };
 		D8726E39172A317200F5AD87 /* WishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishListViewController.m; path = Classes/WishListViewController.m; sourceTree = "<group>"; };
 		D8726E3A172A317300F5AD87 /* WishListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WishListViewController.xib; path = Classes/WishListViewController.xib; sourceTree = "<group>"; };
+		D8726E44172B726800F5AD87 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Resources/Constants.h; sourceTree = SOURCE_ROOT; };
 		D8FBC25517209D1700562FCE /* HueKnew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueKnew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FBC25917209D1700562FCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8FBC25B17209D1700562FCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -136,7 +146,6 @@
 		D8FBC2AE17209ED200562FCE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D8FBC2B017209ED800562FCE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D8FBC2B217209EDF00562FCE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		D8FBC2B91720A86500562FCE /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		D8FBC2BB1720B1DD00562FCE /* MagnifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagnifierView.h; path = Classes/MagnifierView.h; sourceTree = "<group>"; };
 		D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MagnifierView.m; path = Classes/MagnifierView.m; sourceTree = "<group>"; };
 		D8FBC2D51721F14C00562FCE /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayViewController.h; path = Classes/OverlayViewController.h; sourceTree = "<group>"; };
@@ -165,6 +174,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D858061A172B9A2400A2100E /* AROverlay */ = {
+			isa = PBXGroup;
+			children = (
+				D858061B172B9A2400A2100E /* AROverlayViewController.h */,
+				D858061C172B9A2400A2100E /* AROverlayViewController.m */,
+				D858061D172B9A2400A2100E /* AROverlayViewController.xib */,
+				D858061E172B9A2400A2100E /* CaptureSessionManager.h */,
+				D858061F172B9A2400A2100E /* CaptureSessionManager.m */,
+			);
+			path = AROverlay;
+			sourceTree = "<group>";
+		};
 		D8726DE617230E8A00F5AD87 /* ViewDeck */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +222,37 @@
 				D8726E35172A002D00F5AD87 /* woman.png */,
 			);
 			path = icons;
+			sourceTree = "<group>";
+		};
+		D8726E41172B71D900F5AD87 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D8726E38172A317100F5AD87 /* WishListViewController.h */,
+				D8726E39172A317200F5AD87 /* WishListViewController.m */,
+				D8726E3A172A317300F5AD87 /* WishListViewController.xib */,
+				D8FBC2D51721F14C00562FCE /* OverlayViewController.h */,
+				D8FBC2D61721F14C00562FCE /* OverlayViewController.m */,
+				D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */,
+				D8726DF01723111800F5AD87 /* SRLeftViewController.xib */,
+				D8726DF11723111800F5AD87 /* SRRightViewController.xib */,
+				D8726DF21723111800F5AD87 /* SRLeftViewController.h */,
+				D8726DF41723111800F5AD87 /* SRLeftViewController.m */,
+				D8726DF31723111800F5AD87 /* SRRightViewController.h */,
+				D8726DF51723111800F5AD87 /* SRRightViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D8726E43172B71F700F5AD87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8726DFC1724268900F5AD87 /* SRHUDViewController.h */,
+				D8726DFD1724268A00F5AD87 /* SRHUDViewController.m */,
+				D8726DFE1724268A00F5AD87 /* SRHUDViewController.xib */,
+				D8FBC2BB1720B1DD00562FCE /* MagnifierView.h */,
+				D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		D8FBC24A17209D1600562FCE = {
@@ -257,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				D8FBC26117209D1700562FCE /* HueKnew-Info.plist */,
+				D8726E44172B726800F5AD87 /* Constants.h */,
 				D8FBC26217209D1700562FCE /* InfoPlist.strings */,
 				D8FBC26517209D1700562FCE /* main.m */,
 				D8FBC26717209D1700562FCE /* HueKnew-Prefix.pch */,
@@ -270,6 +323,7 @@
 		D8FBC27F17209D7D00562FCE /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				D858061A172B9A2400A2100E /* AROverlay */,
 				D8726DE617230E8A00F5AD87 /* ViewDeck */,
 				D8FBC28017209D7D00562FCE /* AFNetworking */,
 			);
@@ -306,10 +360,10 @@
 		D8FBC2B81720A86500562FCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D858060D172B7EC300A2100E /* mag.png */,
 				D8726E33172A002C00F5AD87 /* icons */,
 				D8726E0117242BED00F5AD87 /* hudElement.png */,
 				D8726DD41721FF3500F5AD87 /* tick.aiff */,
-				D8FBC2B91720A86500562FCE /* sample.png */,
 				D8726E2B1728ED6A00F5AD87 /* color.json */,
 			);
 			path = Resources;
@@ -319,23 +373,8 @@
 			isa = PBXGroup;
 			children = (
 				D8726E2217263A1900F5AD87 /* Cells */,
-				D8FBC2D51721F14C00562FCE /* OverlayViewController.h */,
-				D8726E38172A317100F5AD87 /* WishListViewController.h */,
-				D8726E39172A317200F5AD87 /* WishListViewController.m */,
-				D8726E3A172A317300F5AD87 /* WishListViewController.xib */,
-				D8FBC2D61721F14C00562FCE /* OverlayViewController.m */,
-				D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */,
-				D8726DF01723111800F5AD87 /* SRLeftViewController.xib */,
-				D8726DF11723111800F5AD87 /* SRRightViewController.xib */,
-				D8726DF21723111800F5AD87 /* SRLeftViewController.h */,
-				D8726DF41723111800F5AD87 /* SRLeftViewController.m */,
-				D8726DF31723111800F5AD87 /* SRRightViewController.h */,
-				D8726DF51723111800F5AD87 /* SRRightViewController.m */,
-				D8726DFC1724268900F5AD87 /* SRHUDViewController.h */,
-				D8726DFD1724268A00F5AD87 /* SRHUDViewController.m */,
-				D8726DFE1724268A00F5AD87 /* SRHUDViewController.xib */,
-				D8FBC2BB1720B1DD00562FCE /* MagnifierView.h */,
-				D8FBC2BC1720B1DD00562FCE /* MagnifierView.m */,
+				D8726E41172B71D900F5AD87 /* View Controllers */,
+				D8726E43172B71F700F5AD87 /* Views */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -397,7 +436,6 @@
 				D8FBC27017209D1700562FCE /* Default-568h@2x.png in Resources */,
 				D8FBC27617209D1700562FCE /* ViewController_iPhone.xib in Resources */,
 				D8FBC27917209D1700562FCE /* ViewController_iPad.xib in Resources */,
-				D8FBC2BA1720A86500562FCE /* sample.png in Resources */,
 				D8FBC2D91721F14C00562FCE /* OverlayViewController.xib in Resources */,
 				D8726DD51721FF3500F5AD87 /* tick.aiff in Resources */,
 				D8726DF61723111800F5AD87 /* SRLeftViewController.xib in Resources */,
@@ -411,6 +449,8 @@
 				D8726E36172A002D00F5AD87 /* man.png in Resources */,
 				D8726E37172A002D00F5AD87 /* woman.png in Resources */,
 				D8726E3C172A317600F5AD87 /* WishListViewController.xib in Resources */,
+				D858060E172B7EC300A2100E /* mag.png in Resources */,
+				D8580621172B9A2400A2100E /* AROverlayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +485,8 @@
 				D8726E20172639FE00F5AD87 /* CityColorAnalyticsCell.m in Sources */,
 				D8726E311729FDF000F5AD87 /* DesignerColorAnalyticsCell.m in Sources */,
 				D8726E3B172A317600F5AD87 /* WishListViewController.m in Sources */,
+				D8580620172B9A2400A2100E /* AROverlayViewController.m in Sources */,
+				D8580622172B9A2400A2100E /* CaptureSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
