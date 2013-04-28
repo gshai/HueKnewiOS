@@ -40,6 +40,16 @@
     _colorP2.text = [[subcolors[1] objectForKey:@"percent"] stringValue];
     _colorP3.text = [[subcolors[2] objectForKey:@"percent"] stringValue];
     
+    for (int i = 0; i<3; i++) {
+        float r = [[subcolors[i] objectForKey:@"r"] floatValue] / 255.0;
+        float g = [[subcolors[i] objectForKey:@"g"] floatValue] / 255.0;
+        float b = [[subcolors[i] objectForKey:@"b"] floatValue] / 255.0;
+        UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1];
+        UIView *view = [self viewWithTag:i+10];
+        [view setBackgroundColor:color];
+        NSLog(@"set color : %@ for tag : %d", color, 10+i);
+    }
+/*
     NSString *rgb = [[config objectForKey:@"rgb"]stringByReplacingOccurrencesOfString:@" " withString:@""];
     //TODO - fix the color convertor
 
@@ -47,7 +57,7 @@
     float g = [[self findSubString:rgb btw:@"," and:@","] floatValue];
     float b = [[self findSubString:rgb btw:@"," and:@")"] floatValue];
     NSLog(@"colors: %f %f %f", r,g,b);
-
+*/
 //    UIColor *mainColor = [UIColor colorWithRed:r/255 green:g/255 blue:b/255 alpha:1];    
 //    self.contentView.backgroundColor = mainColor;
    
