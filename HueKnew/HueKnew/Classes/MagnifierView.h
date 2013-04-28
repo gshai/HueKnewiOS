@@ -22,5 +22,5 @@
 @property (nonatomic, strong)   NSObject<ColorOfPoint> *delegate;
 @property (assign, nonatomic)   CGPoint touchPoint;
 
-
+- (void)setTouchPoint:(CGPoint)pt;
 @end

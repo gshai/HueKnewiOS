@@ -35,10 +35,10 @@
 	_touchPoint = pt;
     
 	// update the position of the magnifier
-	self.center = CGPointMake(pt.x, pt.y-60);
+	self.center = CGPointMake(pt.x, pt.y-104);
 }
 
-- (void)drawRect:(CGRect)rect {
+- (void)_drawRect:(CGRect)rect {
     CGContextRef    context = UIGraphicsGetCurrentContext();
     CGRect          bounds = self.bounds;
     CGImageRef      mask = [UIImage imageNamed: @"CIRCLE.png"].CGImage;
@@ -49,13 +49,14 @@
     CGContextFillRect(context, bounds);
     CGContextScaleCTM(context, 2.0, 2.0);
     
-        // draw your subject view here    
+    //draw your subject view here
+    
     CGContextRestoreGState(context);
     
     [glass drawInRect: bounds];
 }
 
-- (void)_drawRect:(CGRect)rect {
+- (void)drawRect:(CGRect)rect {
     NSLog(@"drawRect");
     
     /*

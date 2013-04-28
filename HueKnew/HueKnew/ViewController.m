@@ -90,6 +90,7 @@
     [self setPicBtnsTrayView:nil];
     [self setColorTrayView:nil];
     [self setVideoView:nil];
+    [self setMagIV:nil];
     [super viewDidUnload];
 }
 
@@ -295,6 +296,7 @@
                 break;
             case IMAGE:
                 _mag.layerToMagnify = _imageView.layer;
+                _mag.viewToMagnify = _imageView;
                 break;
                 
             default:
@@ -436,7 +438,8 @@
             NSLog(@"started the drag");
         }
             break;
-        case UIGestureRecognizerStateChanged: {            
+        case UIGestureRecognizerStateChanged: {
+            _magIV.center = CGPointMake(point.x, point.y - 84.0);
             _mag.touchPoint = point;
             [_mag setNeedsDisplay];
         }

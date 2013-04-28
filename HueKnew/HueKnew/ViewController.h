@@ -48,6 +48,7 @@ OverlayViewControllerDelegate> {
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) IBOutlet UIView *panningView;
 @property (strong, nonatomic) IBOutlet UIView *videoView;
+@property (strong, nonatomic) IBOutlet UIImageView *magIV;
 
 @property (strong, nonatomic) SRHUDViewController *hud;
 @property (strong, nonatomic) NSTimer *timer;
