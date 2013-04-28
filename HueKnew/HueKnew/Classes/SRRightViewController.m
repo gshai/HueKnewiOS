@@ -55,7 +55,6 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"heightForRowAtIndexPath %d", indexPath.row);
     switch (indexPath.row) {
         case 0: {
             return 130.0;
