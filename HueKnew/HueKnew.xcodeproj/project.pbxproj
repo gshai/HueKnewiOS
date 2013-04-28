@@ -83,6 +83,8 @@
 		D8FBC2D81721F14C00562FCE /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FBC2D61721F14C00562FCE /* OverlayViewController.m */; };
 		D8FBC2D91721F14C00562FCE /* OverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */; };
 		D8FBC2DC1721F43D00562FCE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FBC2DB1721F43D00562FCE /* AudioToolbox.framework */; };
+		F817C30E172C79A800257AF7 /* WishListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F817C30C172C79A800257AF7 /* WishListCell.m */; };
+		F817C30F172C79A800257AF7 /* WishListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F817C30D172C79A800257AF7 /* WishListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +193,9 @@
 		D8FBC2D61721F14C00562FCE /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayViewController.m; path = Classes/OverlayViewController.m; sourceTree = "<group>"; };
 		D8FBC2D71721F14C00562FCE /* OverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverlayViewController.xib; path = Classes/OverlayViewController.xib; sourceTree = "<group>"; };
 		D8FBC2DB1721F43D00562FCE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F817C30B172C79A800257AF7 /* WishListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WishListCell.h; path = Classes/WishListCell.h; sourceTree = "<group>"; };
+		F817C30C172C79A800257AF7 /* WishListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishListCell.m; path = Classes/WishListCell.m; sourceTree = "<group>"; };
+		F817C30D172C79A800257AF7 /* WishListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WishListCell.xib; path = Classes/WishListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +254,9 @@
 		D8726E2217263A1900F5AD87 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F817C30B172C79A800257AF7 /* WishListCell.h */,
+				F817C30C172C79A800257AF7 /* WishListCell.m */,
+				F817C30D172C79A800257AF7 /* WishListCell.xib */,
 				D8726E0D1724DD7000F5AD87 /* MainColorAnalyticsCell.xib */,
 				D8726E0F1724DDB400F5AD87 /* MainColorAnalyticsCell.h */,
 				D8726E101724DDB500F5AD87 /* MainColorAnalyticsCell.m */,
@@ -538,6 +546,7 @@
 				D85629BB172CBA9F008000BE /* belt.png in Resources */,
 				D85629BD172CBCC6008000BE /* menIcons.xib in Resources */,
 				D85629BF172CC0EB008000BE /* womenIcons.xib in Resources */,
+				F817C30F172C79A800257AF7 /* WishListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +582,7 @@
 				D8726E311729FDF000F5AD87 /* DesignerColorAnalyticsCell.m in Sources */,
 				D8726E3B172A317600F5AD87 /* WishListViewController.m in Sources */,
 				D8580622172B9A2400A2100E /* CaptureSessionManager.m in Sources */,
+				F817C30E172C79A800257AF7 /* WishListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
