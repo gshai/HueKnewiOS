@@ -6,40 +6,19 @@
 //  Copyright (c) 2013 Shai, Gilad. All rights reserved.
 //
 
-#import "CityColorAnalyticsCell.h"
+#import "WishListCell.h"
 
-@implementation CityColorAnalyticsCell
-@synthesize precLabel1 = _precLabel1;
-@synthesize precLabel2 = _precLabel2;
-@synthesize precLabel3 = _precLabel3;
-@synthesize cityLabel1 = _cityLabel1;
-@synthesize cityLabel2 = _cityLabel2;
-@synthesize cityLabel3 = _cityLabel3;
+@implementation WishListCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)initWithImageURL:(NSURL *)imageURL reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-        NSLog(@"initing cell");
-        
-    }
-    return self;
+    NSLog(@"imageURL = %@", imageURL);
+    NSData *data = [[NSData alloc] initWithContentsOfURL:imageURL];
+    UIImage *image = [[UIImage alloc] initWithData:data];
+    self.wishListImageView = [[UIImageView alloc] initWithImage:image];
+    self.imageView.image = image;
 }
 
-- (BOOL)configureWithArray:(NSArray *)config {
-    BOOL isValid = YES;
-    NSLog(@"setting Citys cell with : %@", config);
-    
-    _precLabel1.text = [NSString stringWithFormat:@"%@%%",[[config[0] objectForKey:@"percent"] stringValue]];
-    _precLabel2.text = [NSString stringWithFormat:@"%@%%",[[config[1] objectForKey:@"percent"] stringValue]];
-    _precLabel3.text = [NSString stringWithFormat:@"%@%%",[[config[2] objectForKey:@"percent"] stringValue]];
-    _cityLabel1.text = [config[0] objectForKey:@"name"];
-    _cityLabel2.text = [config[1] objectForKey:@"name"];
-    _cityLabel3.text = [config[2] objectForKey:@"name"];
-    
-    
-    return isValid;
-}
+
 
 @end

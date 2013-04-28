@@ -7,6 +7,7 @@
 //
 
 #import "WishListViewController.h"
+#import "WishListCell.h"
 
 @interface WishListViewController ()
 
@@ -37,6 +38,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+
     // Dispose of any resources that can be recreated.
 }
 
@@ -46,22 +48,29 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"WishListCell";
+    
+    WishListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"WishListCell" owner:nil options:nil];
+        cell = [nib objectAtIndex:0];
+        NSURL *imageUrl = [NSURL URLWithString:@"https://www.google.com/images/srpr/logo4w.png"];
+        [cell initWithImageURL:imageUrl reuseIdentifier:CellIdentifier];
+        
     }
     
     // Configure the cell...
@@ -119,6 +128,11 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 260.0;
 }
 
 @end
