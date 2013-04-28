@@ -251,7 +251,7 @@
     [self.view bringSubviewToFront:_menIconsView];
     [self.view bringSubviewToFront:_womenIconsView];
     
-    [UIView animateWithDuration:2.0 animations:^{
+    [UIView animateWithDuration:1.2 animations:^{
         _womenIconsView.center = self.view.center;
         _menIconsView.center = self.view.center;
     }];
