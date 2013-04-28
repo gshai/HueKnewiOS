@@ -4912,7 +4912,6 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 								<int key="NSvFlags">289</int>
 								<string key="NSFrame">{{227, 16}, {73, 44}}</string>
 								<reference key="NSSuperview" ref="650120335"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>

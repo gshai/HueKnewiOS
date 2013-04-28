@@ -318,9 +318,10 @@
     _mag = [[MagnifierView alloc] init];
     
     switch (imageState) {
-        case VIDEO:
+        case VIDEO:{
             _mag.layerToMagnify = _captureManager.previewLayer;
             [self sampleVideo];
+        }
             break;
         case IMAGE:
             _mag.layerToMagnify = _imageView.layer;

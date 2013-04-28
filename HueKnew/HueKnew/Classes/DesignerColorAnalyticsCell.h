@@ -19,7 +19,6 @@
 @property (strong, nonatomic) IBOutlet UIView *mView;
 
 
-
 - (BOOL)configureWithDictionary:(NSDictionary *)config;
 
 @end

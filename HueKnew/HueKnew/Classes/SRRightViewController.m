@@ -34,6 +34,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.navigationController.navigationBar setTintColor:_primeColor];
+    [self.navigationController.navigationBar setTranslucent:YES];
+    self.navigationController.title = @"Data";
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,7 +89,7 @@
                 cell = [nib objectAtIndex:0];
             }
             [cell configureWithDictionary:[_configDict objectForKey:@"color_stats"]];
-//            cell.contentView.backgroundColor = _primeColor;
+            cell.userInteractionEnabled = NO;
             return cell;
         }
             break;
@@ -103,6 +106,7 @@
             cell.precLabel2.textColor = _primeColor;
             cell.precLabel3.textColor = _primeColor;
             
+            cell.userInteractionEnabled = NO;
             return cell;
         }
             break;
@@ -174,13 +178,17 @@
              */
             
             WishListViewController *vc = [[WishListViewController alloc] initWithNibName:@"WishListViewController" bundle:nil];
-//            UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:vc];
+            
+            int index = indexPath.row-2;
+            NSDictionary *dTemp = [[_configDict objectForKey:@"designers"] objectAtIndex:index];
+            vc.items = [dTemp objectForKey:@"imageUrls"];            
             
             NSLog(@"%@",self.viewDeckController.rightController.navigationController );
             NSLog(@"%@",self.viewDeckController.centerController.navigationController );
 
             [self.navigationController pushViewController:vc animated:YES];
             [self.navigationController.navigationBar setHidden:NO];
+            [self.navigationController setTitle:[dTemp objectForKey:@"name"]];
 
 //            [self presentViewController:vc animated:YES completion:nil];
         }

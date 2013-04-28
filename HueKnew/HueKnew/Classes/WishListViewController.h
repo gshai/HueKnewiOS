@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WishListViewController : UITableViewController
-
+@interface WishListViewController : UITableViewController  <UIGestureRecognizerDelegate>
+@property (strong, nonatomic) NSArray *items;
 @end

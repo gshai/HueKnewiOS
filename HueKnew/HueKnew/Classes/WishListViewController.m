@@ -46,7 +46,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
 
     return 1;
@@ -54,9 +53,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    int rows = 0;
+    if (_items) {
+        rows = [_items count];
+    }
+    return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,9 +70,21 @@
         
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"WishListCell" owner:nil options:nil];
         cell = [nib objectAtIndex:0];
-        NSURL *imageUrl = [NSURL URLWithString:@"https://www.google.com/images/srpr/logo4w.png"];
+        NSURL *imageUrl = [NSURL URLWithString:[_items objectAtIndex:indexPath.row]];
         [cell initWithImageURL:imageUrl reuseIdentifier:CellIdentifier];
         
+        cell.aLabel.userInteractionEnabled = YES;
+        
+        UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+        swipe.delegate = self;
+        [cell.aLabel addGestureRecognizer:swipe];
+        
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
+        tapRecognizer.numberOfTapsRequired = 1;
+        tapRecognizer.delegate = self;
+        [cell.aLabel addGestureRecognizer:tapRecognizer];
+        cell.aLabel.tag = indexPath.row;
+
     }
     
     // Configure the cell...
@@ -121,18 +135,47 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+   [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 260.0;
+    return 330.0;
+}
+
+
+#pragma mark - gesture delegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return  YES;
+}
+- (void)swipeDetected:(UISwipeGestureRecognizer *)swipe {
+    NSLog(@"swipe: %@", swipe);
+    
+    int row = swipe.view.tag;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    WishListCell *cell = [self.tableView cellForRowAtIndexPath: indexPath];
+
+    switch (swipe.direction) {
+        case UISwipeGestureRecognizerDirectionRight: {
+            NSLog(@"swipe right");            
+            [cell slideOutImage];
+        }
+            break;
+            
+        case UISwipeGestureRecognizerDirectionLeft : {
+            NSLog(@"swipe left");
+            [cell slideInImage];
+        }
+            break;
+            
+        default:
+            NSLog(@"other swipe");
+            break;
+    }
+}
+- (void)tapDetected:(UITapGestureRecognizer *)tapRecognizer
+{
+    NSLog(@"tapDetected");
 }
 
 @end

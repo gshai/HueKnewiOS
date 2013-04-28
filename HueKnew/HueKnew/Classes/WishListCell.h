@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WishListCell : UITableViewCell {
+@interface WishListCell : UITableViewCell <UIGestureRecognizerDelegate>{
 
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *wishListLabel;
+
 @property (strong, nonatomic) IBOutlet UIImageView *wishListImageView;
+@property (strong, nonatomic) IBOutlet UILabel *aLabel;
 
 - (void)initWithImageURL:(NSURL *)imageURL reuseIdentifier:(NSString *)reuseIdentifier;
+
+- (void)slideOutImage;
+- (void)slideInImage;
+- (IBAction)saveImage:(id)sender;
 
 @end
