@@ -180,6 +180,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D856299D172C7CE0008000BE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D858062F172C41F100A2100E /* Eurostile LT Demi.ttf */,
+				D89EA54B172C5D1A00A2FF9C /* Eurostile LT Bold.ttf */,
+				D89EA550172C646900A2FF9C /* Eurostile LT Medium.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		D858061A172B9A2400A2100E /* AROverlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,12 +374,10 @@
 		D8FBC2B81720A86500562FCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D858062F172C41F100A2100E /* Eurostile LT Demi.ttf */,
-				D89EA54B172C5D1A00A2FF9C /* Eurostile LT Bold.ttf */,
-				D89EA550172C646900A2FF9C /* Eurostile LT Medium.ttf */,
-				D858060D172B7EC300A2100E /* mag.png */,
+				D856299D172C7CE0008000BE /* Fonts */,
 				D8726E33172A002C00F5AD87 /* icons */,
 				D8726E0117242BED00F5AD87 /* hudElement.png */,
+				D858060D172B7EC300A2100E /* mag.png */,
 				D89EA54E172C5FF400A2FF9C /* CIRCLE_WITH_BASE.png */,
 				D8726DD41721FF3500F5AD87 /* tick.aiff */,
 				D8726E2B1728ED6A00F5AD87 /* color.json */,

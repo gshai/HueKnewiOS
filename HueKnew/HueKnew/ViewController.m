@@ -258,6 +258,11 @@
 }
 - (void)slideCenterToRight {
     NSLog(@"slide center to right");
+    
+        // stop video
+    [self stopVideo];
+    
+        // slide out center and reveal right
     [self.viewDeckController openRightViewBouncing:^(IIViewDeckController *controller) {
         if ([controller.centerController isKindOfClass:[UINavigationController class]]) {            
         }

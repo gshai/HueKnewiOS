@@ -39,6 +39,23 @@
 }
 
 - (void)drawRect:(CGRect)rect {
+    CGContextRef    context = UIGraphicsGetCurrentContext();
+    CGRect          bounds = self.bounds;
+    CGImageRef      mask = [UIImage imageNamed: @"CIRCLE.png"].CGImage;
+    UIImage         *glass = [UIImage imageNamed: @"MAGNIFIER.png"];
+    
+    CGContextSaveGState(context);
+    CGContextClipToMask(context, bounds, mask);
+    CGContextFillRect(context, bounds);
+    CGContextScaleCTM(context, 2.0, 2.0);
+    
+        // draw your subject view here    
+    CGContextRestoreGState(context);
+    
+    [glass drawInRect: bounds];
+}
+
+- (void)_drawRect:(CGRect)rect {
     NSLog(@"drawRect");
     
     /*
@@ -78,6 +95,8 @@
     
     return color;
 }
+
+
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {

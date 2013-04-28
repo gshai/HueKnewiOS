@@ -28,18 +28,9 @@
     BOOL isValid = YES;
     NSLog(@"setting main cell with : %@", config);
     
-//    _colorNameLabel.font = [UIFont fontWithName:@"Eurostile LT Bold" size:34];
-//    _rankingLabel.font = [UIFont fontWithName:@"Eurostile LT Medium" size:20];
-//    _likesLabel.font = [UIFont fontWithName:@"Eurostile LT Demi" size:10];
-//    _yearLabel.font = [UIFont fontWithName:@"Eurostile LT Bold" size:30];
-//    _colorP0.font = [UIFont fontWithName:@"Eurostile LT Demi.ttf" size:23];
-//    _colorP1.font = [UIFont fontWithName:@"Eurostile LT Demi.ttf" size:23];
-//    _colorP2.font = [UIFont fontWithName:@"Eurostile LT Demi.ttf" size:23];
-//    _colorP3.font = [UIFont fontWithName:@"Eurostile LT Demi.ttf" size:23];
-    
     _colorNameLabel.text = [config objectForKey:@"name"];
-    _rankingLabel.text = [[config objectForKey:@"ranking"] stringValue];
-    _likesLabel.text = [[config objectForKey:@"likes"]stringValue];
+    _rankingLabel.text = [NSString stringWithFormat:@"Ranking %@",[[config objectForKey:@"ranking"] stringValue]];
+    _likesLabel.text = [NSString stringWithFormat:@"Likes %@",[[config objectForKey:@"likes"]stringValue]];
     _yearLabel.text = [[config objectForKey:@"year"] stringValue];
     _colorP0.text = [[config objectForKey:@"percent"] stringValue];
     

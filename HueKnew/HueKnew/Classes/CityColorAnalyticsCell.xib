@@ -45,7 +45,7 @@
 								<string key="NSFrame">{{32, 17}, {81, 37}}</string>
 								<reference key="NSSuperview" ref="216128234"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="762221138"/>
+								<reference key="NSNextKeyView" ref="1019383540"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -64,13 +64,13 @@
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUITextAlignment">1</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="177568539">
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="14999817">
 									<string key="name">GillSans-Bold</string>
 									<string key="family">Gill Sans</string>
 									<int key="traits">2</int>
 									<double key="pointSize">36</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="461553707">
+								<object class="NSFont" key="IBUIFont" id="34133356">
 									<string key="NSName">GillSans-Bold</string>
 									<double key="NSSize">36</double>
 									<int key="NSfFlags">16</int>
@@ -80,82 +80,7 @@
 							<object class="IBUILabel" id="762221138">
 								<reference key="NSNextResponder" ref="216128234"/>
 								<int key="NSvFlags">288</int>
-								<string key="NSFrame">{{121, 17}, {81, 37}}</string>
-								<reference key="NSSuperview" ref="216128234"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="21195358"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
-								<int key="IBUIContentMode">7</int>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">99%</string>
-								<reference key="IBUITextColor" ref="21383676"/>
-								<reference key="IBUIHighlightedColor" ref="877040782"/>
-								<int key="IBUIBaselineAdjustment">0</int>
-								<int key="IBUITextAlignment">1</int>
-								<reference key="IBUIFontDescription" ref="177568539"/>
-								<reference key="IBUIFont" ref="461553707"/>
-								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-							</object>
-							<object class="IBUILabel" id="21195358">
-								<reference key="NSNextResponder" ref="216128234"/>
-								<int key="NSvFlags">289</int>
-								<string key="NSFrame">{{211, 17}, {81, 37}}</string>
-								<reference key="NSSuperview" ref="216128234"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="354476347"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
-								<int key="IBUIContentMode">7</int>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">99%</string>
-								<reference key="IBUITextColor" ref="21383676"/>
-								<reference key="IBUIHighlightedColor" ref="877040782"/>
-								<int key="IBUIBaselineAdjustment">0</int>
-								<int key="IBUITextAlignment">1</int>
-								<reference key="IBUIFontDescription" ref="177568539"/>
-								<reference key="IBUIFont" ref="461553707"/>
-								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-							</object>
-							<object class="IBUILabel" id="354476347">
-								<reference key="NSNextResponder" ref="216128234"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{27, 53}, {90, 40}}</string>
-								<reference key="NSSuperview" ref="216128234"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="1019383540"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
-								<int key="IBUIContentMode">7</int>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">NYC</string>
-								<reference key="IBUITextColor" ref="21383676"/>
-								<reference key="IBUIHighlightedColor" ref="877040782"/>
-								<int key="IBUIBaselineAdjustment">0</int>
-								<int key="IBUITextAlignment">1</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="180063681">
-									<string key="name">GillSans-Bold</string>
-									<string key="family">Gill Sans</string>
-									<int key="traits">2</int>
-									<double key="pointSize">34</double>
-								</object>
-								<object class="NSFont" key="IBUIFont" id="504449919">
-									<string key="NSName">GillSans-Bold</string>
-									<double key="NSSize">34</double>
-									<int key="NSfFlags">16</int>
-								</object>
-								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-							</object>
-							<object class="IBUILabel" id="1019383540">
-								<reference key="NSNextResponder" ref="216128234"/>
-								<int key="NSvFlags">288</int>
-								<string key="NSFrame">{{116, 53}, {90, 40}}</string>
+								<string key="NSFrame">{{123, 17}, {81, 37}}</string>
 								<reference key="NSSuperview" ref="216128234"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="107962437"/>
@@ -165,21 +90,44 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">NYC</string>
+								<string key="IBUIText">99%</string>
 								<reference key="IBUITextColor" ref="21383676"/>
 								<reference key="IBUIHighlightedColor" ref="877040782"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUITextAlignment">1</int>
-								<reference key="IBUIFontDescription" ref="180063681"/>
-								<reference key="IBUIFont" ref="504449919"/>
+								<reference key="IBUIFontDescription" ref="14999817"/>
+								<reference key="IBUIFont" ref="34133356"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
-							<object class="IBUILabel" id="107962437">
+							<object class="IBUILabel" id="21195358">
 								<reference key="NSNextResponder" ref="216128234"/>
 								<int key="NSvFlags">289</int>
-								<string key="NSFrame">{{206, 53}, {90, 40}}</string>
+								<string key="NSFrame">{{211, 17}, {81, 37}}</string>
 								<reference key="NSSuperview" ref="216128234"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUIContentMode">7</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<string key="IBUIText">99%</string>
+								<reference key="IBUITextColor" ref="21383676"/>
+								<reference key="IBUIHighlightedColor" ref="877040782"/>
+								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUITextAlignment">1</int>
+								<reference key="IBUIFontDescription" ref="14999817"/>
+								<reference key="IBUIFont" ref="34133356"/>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+							</object>
+							<object class="IBUILabel" id="354476347">
+								<reference key="NSNextResponder" ref="216128234"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{27, 53}, {90, 40}}</string>
+								<reference key="NSSuperview" ref="216128234"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="198991791"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -191,15 +139,68 @@
 								<reference key="IBUIHighlightedColor" ref="877040782"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUITextAlignment">1</int>
-								<reference key="IBUIFontDescription" ref="180063681"/>
-								<reference key="IBUIFont" ref="504449919"/>
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="239548143">
+									<string key="name">GillSans-Bold</string>
+									<string key="family">Gill Sans</string>
+									<int key="traits">2</int>
+									<double key="pointSize">34</double>
+								</object>
+								<object class="NSFont" key="IBUIFont" id="417784730">
+									<string key="NSName">GillSans-Bold</string>
+									<double key="NSSize">34</double>
+									<int key="NSfFlags">16</int>
+								</object>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+							</object>
+							<object class="IBUILabel" id="1019383540">
+								<reference key="NSNextResponder" ref="216128234"/>
+								<int key="NSvFlags">288</int>
+								<string key="NSFrame">{{118, 53}, {90, 40}}</string>
+								<reference key="NSSuperview" ref="216128234"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="762221138"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUIContentMode">7</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<string key="IBUIText">NYC</string>
+								<reference key="IBUITextColor" ref="21383676"/>
+								<reference key="IBUIHighlightedColor" ref="877040782"/>
+								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUITextAlignment">1</int>
+								<reference key="IBUIFontDescription" ref="239548143"/>
+								<reference key="IBUIFont" ref="417784730"/>
+								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+							</object>
+							<object class="IBUILabel" id="107962437">
+								<reference key="NSNextResponder" ref="216128234"/>
+								<int key="NSvFlags">289</int>
+								<string key="NSFrame">{{206, 53}, {90, 40}}</string>
+								<reference key="NSSuperview" ref="216128234"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="21195358"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUIContentMode">7</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<string key="IBUIText">NYC</string>
+								<reference key="IBUITextColor" ref="21383676"/>
+								<reference key="IBUIHighlightedColor" ref="877040782"/>
+								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUITextAlignment">1</int>
+								<reference key="IBUIFontDescription" ref="239548143"/>
+								<reference key="IBUIFont" ref="417784730"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
 						<string key="NSFrameSize">{313, 99}</string>
 						<reference key="NSSuperview" ref="157160308"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="198991791"/>
+						<reference key="NSNextKeyView" ref="354476347"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
