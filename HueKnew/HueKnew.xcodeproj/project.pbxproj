@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		D85629A0172C7CF2008000BE /* MAGNIFIER.png in Resources */ = {isa = PBXBuildFile; fileRef = D856299E172C7CF2008000BE /* MAGNIFIER.png */; };
 		D85629A1172C7CF2008000BE /* CIRCLE.png in Resources */ = {isa = PBXBuildFile; fileRef = D856299F172C7CF2008000BE /* CIRCLE.png */; };
+		D85629AF172CBA9F008000BE /* w_bag.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629A2172CBA9F008000BE /* w_bag.png */; };
+		D85629B0172CBA9F008000BE /* w_coat.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629A3172CBA9F008000BE /* w_coat.png */; };
+		D85629B1172CBA9F008000BE /* w_show.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629A4172CBA9F008000BE /* w_show.png */; };
+		D85629B2172CBA9F008000BE /* w_skirt.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629A5172CBA9F008000BE /* w_skirt.png */; };
+		D85629B3172CBA9F008000BE /* w_jacket.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629A6172CBA9F008000BE /* w_jacket.png */; };
+		D85629B4172CBA9F008000BE /* w_pant.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629A7172CBA9F008000BE /* w_pant.png */; };
+		D85629B5172CBA9F008000BE /* buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629A8172CBA9F008000BE /* buttons.png */; };
+		D85629B6172CBA9F008000BE /* m_pant.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629A9172CBA9F008000BE /* m_pant.png */; };
+		D85629B7172CBA9F008000BE /* m_tshirt.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629AA172CBA9F008000BE /* m_tshirt.png */; };
+		D85629B8172CBA9F008000BE /* m_shirt.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629AB172CBA9F008000BE /* m_shirt.png */; };
+		D85629B9172CBA9F008000BE /* m_jacket.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629AC172CBA9F008000BE /* m_jacket.png */; };
+		D85629BA172CBA9F008000BE /* m_shoe.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629AD172CBA9F008000BE /* m_shoe.png */; };
+		D85629BB172CBA9F008000BE /* belt.png in Resources */ = {isa = PBXBuildFile; fileRef = D85629AE172CBA9F008000BE /* belt.png */; };
+		D85629BD172CBCC6008000BE /* menIcons.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85629BC172CBCC6008000BE /* menIcons.xib */; };
+		D85629BF172CC0EB008000BE /* womenIcons.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85629BE172CC0EA008000BE /* womenIcons.xib */; };
 		D858060E172B7EC300A2100E /* mag.png in Resources */ = {isa = PBXBuildFile; fileRef = D858060D172B7EC300A2100E /* mag.png */; };
 		D8580622172B9A2400A2100E /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D858061F172B9A2400A2100E /* CaptureSessionManager.m */; };
 		D8580624172B9D8300A2100E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8580623172B9D8300A2100E /* AVFoundation.framework */; };
@@ -73,6 +88,21 @@
 /* Begin PBXFileReference section */
 		D856299E172C7CF2008000BE /* MAGNIFIER.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MAGNIFIER.png; sourceTree = "<group>"; };
 		D856299F172C7CF2008000BE /* CIRCLE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIRCLE.png; sourceTree = "<group>"; };
+		D85629A2172CBA9F008000BE /* w_bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_bag.png; sourceTree = "<group>"; };
+		D85629A3172CBA9F008000BE /* w_coat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_coat.png; sourceTree = "<group>"; };
+		D85629A4172CBA9F008000BE /* w_show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_show.png; sourceTree = "<group>"; };
+		D85629A5172CBA9F008000BE /* w_skirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_skirt.png; sourceTree = "<group>"; };
+		D85629A6172CBA9F008000BE /* w_jacket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_jacket.png; sourceTree = "<group>"; };
+		D85629A7172CBA9F008000BE /* w_pant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w_pant.png; sourceTree = "<group>"; };
+		D85629A8172CBA9F008000BE /* buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons.png; sourceTree = "<group>"; };
+		D85629A9172CBA9F008000BE /* m_pant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m_pant.png; sourceTree = "<group>"; };
+		D85629AA172CBA9F008000BE /* m_tshirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m_tshirt.png; sourceTree = "<group>"; };
+		D85629AB172CBA9F008000BE /* m_shirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m_shirt.png; sourceTree = "<group>"; };
+		D85629AC172CBA9F008000BE /* m_jacket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m_jacket.png; sourceTree = "<group>"; };
+		D85629AD172CBA9F008000BE /* m_shoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m_shoe.png; sourceTree = "<group>"; };
+		D85629AE172CBA9F008000BE /* belt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = belt.png; sourceTree = "<group>"; };
+		D85629BC172CBCC6008000BE /* menIcons.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = menIcons.xib; path = Classes/menIcons.xib; sourceTree = "<group>"; };
+		D85629BE172CC0EA008000BE /* womenIcons.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = womenIcons.xib; path = Classes/womenIcons.xib; sourceTree = "<group>"; };
 		D858060D172B7EC300A2100E /* mag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mag.png; sourceTree = "<group>"; };
 		D858061E172B9A2400A2100E /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		D858061F172B9A2400A2100E /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
@@ -236,6 +266,19 @@
 			isa = PBXGroup;
 			children = (
 				D8726E34172A002D00F5AD87 /* man.png */,
+				D85629A2172CBA9F008000BE /* w_bag.png */,
+				D85629A3172CBA9F008000BE /* w_coat.png */,
+				D85629A4172CBA9F008000BE /* w_show.png */,
+				D85629A5172CBA9F008000BE /* w_skirt.png */,
+				D85629A6172CBA9F008000BE /* w_jacket.png */,
+				D85629A7172CBA9F008000BE /* w_pant.png */,
+				D85629A8172CBA9F008000BE /* buttons.png */,
+				D85629A9172CBA9F008000BE /* m_pant.png */,
+				D85629AA172CBA9F008000BE /* m_tshirt.png */,
+				D85629AB172CBA9F008000BE /* m_shirt.png */,
+				D85629AC172CBA9F008000BE /* m_jacket.png */,
+				D85629AD172CBA9F008000BE /* m_shoe.png */,
+				D85629AE172CBA9F008000BE /* belt.png */,
 				D8726E35172A002D00F5AD87 /* woman.png */,
 			);
 			path = icons;
@@ -264,6 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				D8726DFC1724268900F5AD87 /* SRHUDViewController.h */,
+				D85629BE172CC0EA008000BE /* womenIcons.xib */,
+				D85629BC172CBCC6008000BE /* menIcons.xib */,
 				D8726DFD1724268A00F5AD87 /* SRHUDViewController.m */,
 				D8726DFE1724268A00F5AD87 /* SRHUDViewController.xib */,
 				D8FBC2BB1720B1DD00562FCE /* MagnifierView.h */,
@@ -478,6 +523,21 @@
 				D89EA551172C646900A2FF9C /* Eurostile LT Medium.ttf in Resources */,
 				D85629A0172C7CF2008000BE /* MAGNIFIER.png in Resources */,
 				D85629A1172C7CF2008000BE /* CIRCLE.png in Resources */,
+				D85629AF172CBA9F008000BE /* w_bag.png in Resources */,
+				D85629B0172CBA9F008000BE /* w_coat.png in Resources */,
+				D85629B1172CBA9F008000BE /* w_show.png in Resources */,
+				D85629B2172CBA9F008000BE /* w_skirt.png in Resources */,
+				D85629B3172CBA9F008000BE /* w_jacket.png in Resources */,
+				D85629B4172CBA9F008000BE /* w_pant.png in Resources */,
+				D85629B5172CBA9F008000BE /* buttons.png in Resources */,
+				D85629B6172CBA9F008000BE /* m_pant.png in Resources */,
+				D85629B7172CBA9F008000BE /* m_tshirt.png in Resources */,
+				D85629B8172CBA9F008000BE /* m_shirt.png in Resources */,
+				D85629B9172CBA9F008000BE /* m_jacket.png in Resources */,
+				D85629BA172CBA9F008000BE /* m_shoe.png in Resources */,
+				D85629BB172CBA9F008000BE /* belt.png in Resources */,
+				D85629BD172CBCC6008000BE /* menIcons.xib in Resources */,
+				D85629BF172CC0EB008000BE /* womenIcons.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

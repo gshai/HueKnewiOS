@@ -32,26 +32,28 @@
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
     tapRecognizer.numberOfTapsRequired = 1;
     tapRecognizer.delegate = self;
-//    [_videoView addGestureRecognizer:tapRecognizer];
     [_imageView addGestureRecognizer:tapRecognizer];
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
     pan.delegate = self;
-//    [_videoView addGestureRecognizer:pan];
     [_imageView addGestureRecognizer:pan];
     
     self.overlayViewController =
     [[OverlayViewController alloc] initWithNibName:@"OverlayViewController" bundle:nil] ;
     
-    // as a delegate we will be notified when pictures are taken and when to dismiss the image picker
+        // as a delegate we will be notified when pictures are
+        // taken and when to dismiss the image picker
     _overlayViewController.delegate = self;
 
-    // prevent panning of the view
+        // prevent panning of the view
     self.viewDeckController.panningView = _panningView;
     self.viewDeckController.panningMode = IIViewDeckPanningViewPanning;
     
-    // place btn tray out side of view
+        // place btn tray out side of view
     _picBtnsTrayView.frame = CGRectMake(0, self.view.frame.size.height, _picBtnsTrayView.frame.size.width, _picBtnsTrayView.frame.size.height);
+
+    _womenIconsView.center = CGPointMake(self.view.frame.size.width * 2, _womenIconsView.center.y);
+    _menIconsView.center = CGPointMake(-self.view.frame.size.width * 2, _menIconsView.center.y);
 
 }
 
@@ -89,6 +91,8 @@
     [self setPicBtnsTrayView:nil];
     [self setVideoView:nil];
     [self setMagIV:nil];
+    [self setWomenIconsView:nil];
+    [self setMenIconsView:nil];
     [super viewDidUnload];
 }
 
@@ -140,6 +144,11 @@
     
 //    [self showImagePicker:UIImagePickerControllerSourceTypeCamera];
 //    _sendColorBtn.enabled = NO;
+}
+
+- (IBAction)selectFashionItem:(id)sender {
+    NSLog(@"select fashion");
+    [self slideOutIcons];
 }
 
 
@@ -236,6 +245,28 @@
     }];
 }
 
+- (void)slideInIcons {
+    _womenIconsView.hidden = NO;
+    _menIconsView.hidden = NO;
+    [self.view bringSubviewToFront:_menIconsView];
+    [self.view bringSubviewToFront:_womenIconsView];
+    
+    [UIView animateWithDuration:2.0 animations:^{
+        _womenIconsView.center = self.view.center;
+        _menIconsView.center = self.view.center;
+    }];
+}
+- (void)slideOutIcons {
+    [UIView animateWithDuration:0.3 animations:^{
+        _womenIconsView.center = CGPointMake(self.view.frame.size.width * 2, _womenIconsView.center.y);
+        _menIconsView.center = CGPointMake(-self.view.frame.size.width * 2, _menIconsView.center.y);
+    } completion:^(BOOL finished) {
+        _womenIconsView.hidden = YES;
+        _menIconsView.hidden = YES;
+        [self sendColorToHK:_localColor];
+    }];
+}
+
 - (void)slideCenterToRight {
     NSLog(@"slide center to right");
     
@@ -325,7 +356,7 @@
 }
 - (void)eventWithColor:(UIColor *)color {
     NSLog(@"mag sent a tap with color: %@", color);
-    [self sendColorToHK:color];
+    [self slideInIcons];
 }
 
 #pragma mark - Overlay Protocol

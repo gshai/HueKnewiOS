@@ -15,7 +15,7 @@
 @synthesize cityLabel1 = _cityLabel1;
 @synthesize cityLabel2 = _cityLabel2;
 @synthesize cityLabel3 = _cityLabel3;
-
+/*
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -26,7 +26,7 @@
     }
     return self;
 }
-
+*/
 - (BOOL)configureWithArray:(NSArray *)config {
     BOOL isValid = YES;
     NSLog(@"setting Citys cell with : %@", config);

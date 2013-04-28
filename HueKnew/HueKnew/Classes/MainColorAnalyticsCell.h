@@ -24,6 +24,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *colorP1;
 @property (strong, nonatomic) IBOutlet UILabel *colorP2;
 @property (strong, nonatomic) IBOutlet UILabel *colorP3;
+@property (strong, nonatomic) IBOutlet UIView *bg1;
+@property (strong, nonatomic) IBOutlet UIView *bg2;
+@property (strong, nonatomic) IBOutlet UIView *bg3;
 
 
 

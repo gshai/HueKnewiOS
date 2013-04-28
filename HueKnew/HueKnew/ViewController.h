@@ -48,6 +48,8 @@ OverlayViewControllerDelegate> {
 @property (strong, nonatomic) IBOutlet UIView *panningView;
 @property (strong, nonatomic) IBOutlet UIView *videoView;
 @property (strong, nonatomic) IBOutlet UIImageView *magIV;
+@property (strong, nonatomic) IBOutlet UIView *womenIconsView;
+@property (strong, nonatomic) IBOutlet UIView *menIconsView;
 
 @property (strong, nonatomic) SRHUDViewController *hud;
 @property (strong, nonatomic) NSTimer *timer;
@@ -55,6 +57,7 @@ OverlayViewControllerDelegate> {
 
 - (IBAction)photoLibraryAction:(id)sender;
 - (IBAction)cameraAction:(id)sender;
+- (IBAction)selectFashionItem:(id)sender;
 
 //- (IBAction)sendColor:(id)sender;
 - (void)sendColorToHK:(UIColor *)color;
