@@ -52,7 +52,6 @@
     
     // place btn tray out side of view
     _picBtnsTrayView.frame = CGRectMake(0, self.view.frame.size.height, _picBtnsTrayView.frame.size.width, _picBtnsTrayView.frame.size.height);
-    _colorTrayView.frame = CGRectMake(0, self.view.frame.size.height, _colorTrayView.frame.size.width, _colorTrayView.frame.size.height);
 
 }
 
@@ -88,7 +87,6 @@
     [self setActivityIndicator:nil];
     [self setPanningView:nil];
     [self setPicBtnsTrayView:nil];
-    [self setColorTrayView:nil];
     [self setVideoView:nil];
     [self setMagIV:nil];
     [super viewDidUnload];
@@ -144,13 +142,6 @@
 //    _sendColorBtn.enabled = NO;
 }
 
-- (IBAction)sendColor:(id)sender {
-    NSLog(@"sendColorBtn");
-    
-    // get color from colorView
-    UIColor *color = _colorView.backgroundColor;
-    [self sendColorToHK:color];
-}
 
 #pragma mark - Server
 - (void)sendColorToHK:(UIColor *)color {
@@ -202,7 +193,7 @@
 #pragma mark helpers
 
 - (void)startActiveDisplay { 
-    _hud = [[SRHUDViewController alloc] initWithColor:_colorView.backgroundColor];
+    _hud = [[SRHUDViewController alloc] initWithColor:_localColor];
     _hud.view.center = _imageView.center;
     [self.view addSubview:_hud.view];
     [_hud startAnimatingView];
@@ -223,7 +214,7 @@
     NSLog(@"Processing JSON dict: %@", dict);
     
     SRRightViewController *vc = [[SRRightViewController alloc] initWithNibName:@"SRRightViewController" bundle:nil andDictionary:dict];
-    [vc setPrimeColor:_colorView.backgroundColor];
+    [vc setPrimeColor:_localColor];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.viewDeckController.rightController = navController;
     
@@ -244,19 +235,7 @@
         _picBtnsTrayView.hidden = YES;
     }];
 }
-- (void)slideInColorTray {
-    [UIView animateWithDuration:0.5 animations:^{
-        _colorTrayView.hidden = NO;
-        _colorTrayView.frame = CGRectMake(0, self.view.frame.size.height - _colorTrayView.frame.size.height, _colorTrayView.frame.size.width, _colorTrayView.frame.size.height);
-    }];
-}
-- (void)slideOutColorTray {
-    [UIView animateWithDuration:0.3 animations:^{
-        _colorTrayView.frame = CGRectMake(0, self.view.frame.size.height, _colorTrayView.frame.size.width, _colorTrayView.frame.size.height);
-    }completion:^(BOOL finished) {
-        _colorTrayView.hidden = YES;
-    }];
-}
+
 - (void)slideCenterToRight {
     NSLog(@"slide center to right");
     
@@ -264,9 +243,9 @@
     [self stopVideo];
     
         // slide out center and reveal right
+    [self.viewDeckController setOpenSlideAnimationDuration:1.2];
     [self.viewDeckController openRightViewBouncing:^(IIViewDeckController *controller) {
-        if ([controller.centerController isKindOfClass:[UINavigationController class]]) {            
-        }
+        NSLog(@"open to the right");
     }];
 }
 
@@ -342,7 +321,7 @@
 
 - (void)updateWithColor:(UIColor *)color {
     NSLog(@"update color: %@", color);
-    [_colorView setBackgroundColor:color];
+    _localColor = color;
 }
 - (void)eventWithColor:(UIColor *)color {
     NSLog(@"mag sent a tap with color: %@", color);
@@ -384,7 +363,6 @@
     
     // set view
     [self slideOutPicBtns];
-    [self slideInColorTray];
 
     [self createMagnifierWithPoint:self.view.center];
     [self.view addSubview:_mag];
@@ -412,19 +390,15 @@
         }
     } else if (appState == IMAGEINVIEW) {
         if (_picBtnsTrayView.hidden) {
-            [self slideOutColorTray];
             [self slideInPicBtns];
         } else {
             [self slideOutPicBtns];
-            [self slideInColorTray];
         }
     } else if (appState == HASANALYTICS) {
     if (_picBtnsTrayView.hidden) {
-        [self slideOutColorTray];
         [self slideInPicBtns];
     } else {
         [self slideOutPicBtns];
-        [self slideInColorTray];
     }
 }
 
@@ -445,8 +419,7 @@
         }
             break;
         case UIGestureRecognizerStateEnded: {            
-            NSLog(@"drag ended");
-            _sendColorBtn.enabled = YES;
+            NSLog(@"drag ended");            
         }
             break;
             

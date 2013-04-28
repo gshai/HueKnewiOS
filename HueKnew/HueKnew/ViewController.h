@@ -36,11 +36,10 @@ OverlayViewControllerDelegate> {
 }
 
 @property (strong, nonatomic) OverlayViewController *overlayViewController;
-@property (strong, nonatomic) IBOutlet UIButton *sendColorBtn;
-@property (strong, nonatomic) IBOutlet UIView *colorView;
+//@property (strong, nonatomic) IBOutlet UIButton *sendColorBtn;
+@property (strong, nonatomic) UIColor *localColor;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) MagnifierView *mag;
-@property (strong, nonatomic) IBOutlet UIView *colorTrayView;
 
 @property (strong, nonatomic) IBOutlet UIView *picBtnsTrayView;
 @property (strong, nonatomic) IBOutlet UIButton *cameraBtn;
@@ -57,7 +56,7 @@ OverlayViewControllerDelegate> {
 - (IBAction)photoLibraryAction:(id)sender;
 - (IBAction)cameraAction:(id)sender;
 
-- (IBAction)sendColor:(id)sender;
+//- (IBAction)sendColor:(id)sender;
 - (void)sendColorToHK:(UIColor *)color;
 
 // Magnifier
