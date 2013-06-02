@@ -31,7 +31,7 @@
     _colorNameLabel.text = [config objectForKey:@"name"];
     _rankingLabel.text = [NSString stringWithFormat:@"Ranking %@",[[config objectForKey:@"ranking"] stringValue]];
     _likesLabel.text = [NSString stringWithFormat:@"Likes %@",[[config objectForKey:@"likes"]stringValue]];
-    _yearLabel.text = [[config objectForKey:@"year"] stringValue];
+    _yearLabel.text = [config objectForKey:@"year"];
     _colorP0.text = [[config objectForKey:@"percent"] stringValue];
     
     // Should do this part progrematicly 

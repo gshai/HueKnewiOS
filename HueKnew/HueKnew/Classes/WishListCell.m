@@ -7,15 +7,17 @@
 //
 
 #import "WishListCell.h"
+#import "AFNetworking.h"
 
 @implementation WishListCell
 
 - (void)initWithImageURL:(NSURL *)imageURL reuseIdentifier:(NSString *)reuseIdentifier
 {
     NSLog(@"imageURL = %@", imageURL);
-    NSData *data = [[NSData alloc] initWithContentsOfURL:imageURL];
-    UIImage *image = [[UIImage alloc] initWithData:data];
-    [_wishListImageView setImage:image];
+    
+    UIImage *placeHolder = [UIImage imageNamed:@"woman.png"];
+    [_wishListImageView setImageWithURL:imageURL placeholderImage:placeHolder];
+
 }
 
 - (void)slideOutImage {
